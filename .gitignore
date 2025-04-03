@@ -1,0 +1,20 @@
+# 🔴 Bỏ qua thư mục cấu hình của Visual Studio
+.vs/                      # Chứa metadata của VS, không cần khi share code
+*.suo                     # File cấu hình session của VS
+*.user                    # Cấu hình user-specific, không quan trọng với team
+
+# 🔴 Bỏ qua thư mục build (không cần vì nó được tạo lại khi build)
+bin/                      # Chứa file DLL & EXE sau khi build, không cần đẩy lên Git
+obj/                      # Chứa object file, cũng không cần
+
+# 🔴 Loại bỏ file cache & temporary
+*.cache                   # File cache của VS
+*.log                     # File log
+*.csproj.user             # Cấu hình user-specific của project, không nên push
+*.tlog                    # Temporary log của VS
+*.tmp                     # File tạm
+
+# 🔴 Loại bỏ các file lock & database tạm
+*.ldb                     # Database lock file
+*.mdf                     # SQL Server Database (nếu có, tránh conflict)
+*.ldf                     # SQL Server Log File
