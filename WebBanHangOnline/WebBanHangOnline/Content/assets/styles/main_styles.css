@@ -1209,15 +1209,21 @@ section
 }
 
 /*********************************
-6. Deal of the week
+6. Deal of the week 
 *********************************/
 
-.deal_ofthe_week
-{
+.deal_ofthe_week {
 	width: 100%;
 	margin-top: 41px;
-	background: #f2f2f2;
+	background: #f5deb3;
 }
+/*
+→ Nếu bạn chọn ảnh 1:
+👉 Dùng nền #f0e5cf hoặc #fefae0 để giữ vibe tinh tế, mềm mại.
+
+→ Nếu bạn chọn ảnh 2 (theo tôi ảnh này đẹp hơn, hút mắt hơn 💯):
+👉 Dùng nền #f5deb3 hoặc #e8c9a7 – cực hợp tone đất nung, nhìn vào là thấy "gốm sứ vibe" ngay luôn!
+*/
 .deal_ofthe_week_img
 {
 	height: 540px;

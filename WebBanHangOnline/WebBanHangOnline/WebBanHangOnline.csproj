@@ -186,9 +186,12 @@
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Common\Common.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3248,22 +3251,24 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Uploads\images\472292835_901887562101536_2385615525576769407_n.jpg" />
-    <Content Include="Uploads\images\anh4.jpg" />
-    <Content Include="Uploads\images\donChe1.png" />
-    <Content Include="Uploads\images\founder.jpg" />
-    <Content Include="Uploads\images\IMG_0045.JPG" />
-    <Content Include="Uploads\images\IMG_0046.JPG" />
-    <Content Include="Uploads\images\ronaldo3.jpg" />
-    <Content Include="Uploads\images\ronaldo4.jpg" />
-    <Content Include="Uploads\_thumbs\Images\472292835_901887562101536_2385615525576769407_n.jpg" />
-    <Content Include="Uploads\_thumbs\Images\anh4.jpg" />
-    <Content Include="Uploads\_thumbs\Images\donChe1.png" />
-    <Content Include="Uploads\_thumbs\Images\founder.jpg" />
-    <Content Include="Uploads\_thumbs\Images\IMG_0045.JPG" />
-    <Content Include="Uploads\_thumbs\Images\IMG_0046.JPG" />
-    <Content Include="Uploads\_thumbs\Images\ronaldo3.jpg" />
-    <Content Include="Uploads\_thumbs\Images\ronaldo4.jpg" />
+    <Content Include="Uploads\images\not_available.jpg" />
+    <Content Include="Uploads\images\products\banner_binh_hoa.jpg" />
+    <Content Include="Uploads\images\products\banner_ceramics_statue.jpg" />
+    <Content Include="Uploads\images\products\banner_construction_ceramics.jpg" />
+    <Content Include="Uploads\images\products\banner_gia_dung.jpg" />
+    <Content Include="Uploads\images\products\chim_tri_su.jpg" />
+    <Content Include="Uploads\images\products\hoa_sen_ve_vang1.jpg" />
+    <Content Include="Uploads\images\products\hoa_sen_ve_vang2.jpg" />
+    <Content Include="Uploads\images\products\khay_mut_keo_trai_tim.jpg" />
+    <Content Include="Uploads\images\products\ly_su1.jpg" />
+    <Content Include="Uploads\images\products\ly_su2.jpg" />
+    <Content Include="Uploads\images\products\ly_su3.jpg" />
+    <Content Include="Uploads\images\products\ly_su4.jpg" />
+    <Content Include="Uploads\images\products\main_banner.jpg" />
+    <Content Include="Uploads\images\products\men_do_hoa_sen_ve_vang.jpg" />
+    <Content Include="Uploads\images\products\ngoi_bo1.jpg" />
+    <Content Include="Uploads\images\products\ngoi_bo2.jpg" />
+    <Content Include="Uploads\images\products\riem_hoa_mai_do.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3298,11 +3303,17 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Menu\_MenuTop.cshtml" />
+    <Content Include="Views\Menu\_MenuProductCategory.cshtml" />
+    <Content Include="Views\Menu\_MenuArrivals.cshtml" />
+    <Content Include="Views\Products\Partial_ItemsByCateId.cshtml" />
+    <Content Include="Views\Products\Partial_ProductSales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Content\ckfinder\userfiles\" />
+    <Folder Include="Uploads\_thumbs\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
