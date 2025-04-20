@@ -24,8 +24,18 @@ namespace WebBanHangOnline.Controllers
 
         public ActionResult MenuProductCategory()
         {
-            var items = db.ProductCategories.Take(3).ToList();
+            var items = db.ProductCategories.Take(3).ToList(); //show danh sách danh mục ngoài home
             return PartialView("_MenuProductCategory", items);
+        }
+
+        public ActionResult MenuLeft(int? id)
+        {
+            if (id != null)
+            {
+                ViewBag.CateId = id;
+            }
+            var items = db.ProductCategories.Take(5).ToList(); //show quantity - left menu
+            return PartialView("_MenuLeft", items);
         }
 
         public ActionResult MenuArrivals()

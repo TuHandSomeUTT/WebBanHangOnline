@@ -1,0 +1,39 @@
+﻿@model WebBanHangOnline.Models.OrderViewModel
+@using (Ajax.BeginForm("CheckOut", "ShoppingCart", new AjaxOptions
+{
+    HttpMethod = "POST",
+    UpdateTargetId = "load_data",
+    OnComplete = "OnSuccessCO",
+    OnFailure = "OnFailure"
+
+}, new { @Id = "myForm" }))
+{
+    @Html.AntiForgeryToken()
+    <h3>Thông Tin Khách Hàng</h3>
+    <div class="form-group">
+        <label>Họ Tên Khách Hàng</label>
+        <input type="text" name="CustomerName" required class="form-control" autocomplete="off" />
+    </div>
+    <div class="form-group">
+        <label>Số Điện Thoại</label>
+        <input type="text" name="Phone" class="form-control" autocomplete="off" />
+    </div>
+    <div class="form-group">
+        <label>Địa Chỉ</label>
+        <input type="text" name="Address" class="form-control" autocomplete="off" />
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="Email" class="form-control" autocomplete="off" />
+    </div>
+    <div class="form-group">
+        <label>Hình Thức Thanh Toán</label>
+        <select class="form-control" name="TypePayment">
+            <option value="1" selected>Thanh Toán Khi Nhận Hàng 💵</option>
+            <option value="2">Chuyển Khoản 💳</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-block btn-success">Đặt Hàng</button>
+    </div>
+}
