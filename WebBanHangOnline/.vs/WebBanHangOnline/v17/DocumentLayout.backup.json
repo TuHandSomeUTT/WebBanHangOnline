@@ -3,44 +3,24 @@
   "WorkspaceRootPath": "D:\\Asp.NET Workspace\\WebBanHangOnline\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\views\\home\\refresh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\home\\refresh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\views\\shoppingcart\\checkoutsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\shoppingcart\\checkoutsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\models\\thongkeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\models\\thongkeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\scripts\\jsshopping.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\scripts\\jsshopping.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\products\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\products\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\products\\productcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\products\\productcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\products\\partial_productsales.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\products\\partial_productsales.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\products\\partial_itemsbycateid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\products\\partial_itemsbycateid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\models\\common\\thongketruycap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\models\\common\\thongketruycap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,132 +30,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\ShoppingCart\\Index.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\Index.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\ShoppingCart\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-20T16:06:05.606Z",
+              "DocumentIndex": 3,
+              "Title": "ThongKeViewModel.cs",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Models\\ThongKeViewModel.cs",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Models\\ThongKeViewModel.cs",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Models\\ThongKeViewModel.cs",
+              "RelativeToolTip": "WebBanHangOnline\\Models\\ThongKeViewModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwBoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T15:46:25.371Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CheckOutSuccess.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABuAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Products\\Index.cshtml",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "WebBanHangOnline\\Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-20T16:02:14.885Z",
+              "WhenOpened": "2025-04-21T15:42:46.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ShoppingCartController.cs",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\ShoppingCartController.cs",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Controllers\\ShoppingCartController.cs",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\ShoppingCartController.cs",
-              "RelativeToolTip": "WebBanHangOnline\\Controllers\\ShoppingCartController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAwwBIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T14:50:23.873Z",
+              "Title": "Refresh.cshtml",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Home\\Refresh.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Home\\Refresh.cshtml",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Home\\Refresh.cshtml",
+              "RelativeToolTip": "WebBanHangOnline\\Views\\Home\\Refresh.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T15:41:48.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAABMAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T13:29:09.292Z",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebBanHangOnline\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCYAAACDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T15:30:29.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "BundleConfig.cs",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\App_Start\\BundleConfig.cs",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\App_Start\\BundleConfig.cs",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\App_Start\\BundleConfig.cs",
-              "RelativeToolTip": "WebBanHangOnline\\App_Start\\BundleConfig.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwA0AAAA9AAAAAAAAAA==",
+              "Title": "ThongKeTruyCap.cs",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Models\\Common\\ThongKeTruyCap.cs",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Models\\Common\\ThongKeTruyCap.cs",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Models\\Common\\ThongKeTruyCap.cs",
+              "RelativeToolTip": "WebBanHangOnline\\Models\\Common\\ThongKeTruyCap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T14:35:47.398Z",
+              "WhenOpened": "2025-04-21T15:01:02.199Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "jsShopping.js",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Scripts\\jsShopping.js",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Scripts\\jsShopping.js",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Scripts\\jsShopping.js",
-              "RelativeToolTip": "WebBanHangOnline\\Scripts\\jsShopping.js",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwCwAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-10T13:30:20.889Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Detail.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Detail.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Products\\Detail.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Detail.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\Products\\Detail.cshtml",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAFoAAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T13:27:16.384Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductCategory.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\ProductCategory.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Products\\ProductCategory.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\ProductCategory.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\Products\\ProductCategory.cshtml",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T13:26:39.637Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Partial_ProductSales.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Partial_ProductSales.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Products\\Partial_ProductSales.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Partial_ProductSales.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\Products\\Partial_ProductSales.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T13:26:19.051Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Partial_ItemsByCateId.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Partial_ItemsByCateId.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Products\\Partial_ItemsByCateId.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Partial_ItemsByCateId.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\Products\\Partial_ItemsByCateId.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACQAAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T13:25:35.509Z"
             }
           ]
         }

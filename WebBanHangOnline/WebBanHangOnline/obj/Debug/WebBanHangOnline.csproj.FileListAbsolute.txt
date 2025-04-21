@@ -122,3 +122,13 @@ D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnlin
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.Update2803.resources
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.Update28031.resources
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.UpdatePayment.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.CreateTBThongKe.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.RenameTBThongKe.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\Dapper.dll
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\System.Threading.Tasks.Extensions.dll
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\Dapper.xml
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\System.Threading.Tasks.Extensions.xml
