@@ -132,3 +132,5 @@ D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\Dapper.xml
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\Microsoft.Bcl.AsyncInterfaces.xml
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\System.Threading.Tasks.Extensions.xml
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.updateEmail.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.addFieldCreatedDate27042025.resources
