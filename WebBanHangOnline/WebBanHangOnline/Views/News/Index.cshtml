@@ -1,8 +1,57 @@
-﻿
+﻿@model IEnumerable<WebBanHangOnline.Models.EF.News>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- CSS-->
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
+<style>
+    .news_section_container {
+        margin-top: 180px;
+    }
 
-<h2>Index</h2>
+    .row-item-news {
+        margin-bottom: 10px;
+    }
 
+    .title-news{
+        font-size:24px;
+        border-bottom: 1px solid;
+        padding: 15px 0px;
+        margin-bottom: 25px;
+    }
+
+    .img-box img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+</style>
+<!-- End CSS-->
+<div class="container news_section_container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="title-news">Tin Tức</h1>
+        </div>
+    </div>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <div class="row row-item-news">
+                <div class="col-md-3">
+                    <div class="img-box">
+                        <a href="/@item.Alias-n@(item.Id)" title="@item.Title"> <img src="@item.Image" alt="@item.Title" /> </a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="content-box">
+                        <h3> <a href="/@item.Alias-n@(item.Id)" title="@item.Title">@item.Title</a> </h3>
+                        <div class="description-box">
+                            @item.Description
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

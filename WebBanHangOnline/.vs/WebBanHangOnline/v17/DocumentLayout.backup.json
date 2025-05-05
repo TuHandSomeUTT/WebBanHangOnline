@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\Asp.NET Workspace\\WebBanHangOnline\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\views\\news\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\news\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\news\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\views\\news\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\news\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\News\\Detail.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\News\\Detail.cshtml",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\News\\Detail.cshtml",
+              "RelativeToolTip": "WebBanHangOnline\\Views\\News\\Detail.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-05T15:52:51.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "RouteConfig.cs",
               "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "WebBanHangOnline\\App_Start\\RouteConfig.cs",
               "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\App_Start\\RouteConfig.cs",
               "RelativeToolTip": "WebBanHangOnline\\App_Start\\RouteConfig.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAQwDkAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwD0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T15:12:06.002Z",
+              "WhenOpened": "2025-05-05T15:50:13.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\News\\Index.cshtml",
               "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\News\\Index.cshtml",
               "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\News\\Index.cshtml",
               "RelativeToolTip": "WebBanHangOnline\\Views\\News\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwCwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-05T15:08:23.359Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "NewsController.cs",
               "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\NewsController.cs",
               "RelativeDocumentMoniker": "WebBanHangOnline\\Controllers\\NewsController.cs",
               "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\NewsController.cs",
               "RelativeToolTip": "WebBanHangOnline\\Controllers\\NewsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T15:06:31.103Z",
               "EditorCaption": ""
