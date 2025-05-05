@@ -4,14 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebBanHangOnline.Models;
+using WebBanHangOnline.Models.EF;
 
 namespace WebBanHangOnline.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Partial_Subcribe()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult Subcribe(Subscribe req)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Subscribes.Add(new Subscribe { Email = req.Email, CreatedDate = DateTime.Now });
+                db.SaveChanges();
+                return Json(new {Success = true});
+            }
+            return View("Partial_Subcribe", req);
         }
 
         public ActionResult About()

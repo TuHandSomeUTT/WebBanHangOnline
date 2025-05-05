@@ -52,12 +52,12 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-10">
+                <div class="col-6">
                     @using (Html.BeginForm("index", "News", FormMethod.Get, new { }))
                     {
 
                         <div class="input-group input-group-sm">
-                            @Html.TextBox("Searchtext")
+                            @Html.TextBox("Searchtext", null, new { @class = "form-control"})
                             @*<input type="text" name="searchtext" class="form-control" />*@
                             <span class="input-group-append">
                                 <button type="submit" class="btn btn-info btn-flat">Tìm Kiếm</button>

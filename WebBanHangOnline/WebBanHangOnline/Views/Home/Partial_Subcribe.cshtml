@@ -1,0 +1,45 @@
+﻿@model WebBanHangOnline.Models.EF.Subscribe
+
+<div class="newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-left">
+                    <h4>Đăng Ký</h4>
+                    <p class="mt-2">Hãy đăng ký nhận mail để đón chờ những tin tức mới nhất về khuyến mãi của Gốm Sứ Bình Xuyên</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                @using (Ajax.BeginForm("Subcribe", "Home", new AjaxOptions
+                {
+                    OnBegin = "OnBeginSub",
+                    OnSuccess = "OnSuccessSub",
+                    OnFailure = "OnFailureSub"
+
+                }))
+                {
+                    @Html.AntiForgeryToken()
+                    <script>
+                        function OnBeginSub() {
+                            // Không cần tham số vì nó chỉ chạy khi bắt đầu gửi request, chưa có response
+                        }
+                        function OnSuccessSub(rs) {
+                            if (rs.Success) {
+                                alert('AKE');
+                            }
+                        }
+                        function OnFailureSub(rs) {
+
+                        }
+                    </script>
+                    <div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
+                        @*@Html.TextBoxFor(x => x.Email, new { })*@
+                        <input id="newsletter_email" name="Email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
+                        <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
