@@ -9,21 +9,21 @@ using WebBanHangOnline.Models.EF;
 
 namespace WebBanHangOnline.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin, Employee")]
+    [Authorize(Roles = "Admin,Employee")]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Admin/Products
         public ActionResult Index(int? page)
         {
-            IEnumerable<Product> items = db.Products.OrderByDescending(x => x.Id);// thằng nào tạo sau thì cho lên trước
-            var pageSize = 5; // 5 record per page
+            IEnumerable<Product> items = db.Products.OrderByDescending(x => x.Id);
+            var pageSize = 10;
             if (page == null)
             {
                 page = 1;
             }
             var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
-            items = items.ToPagedList(pageIndex, pageSize);//bản ghi mới nhất sẽ lên đầu
+            items = items.ToPagedList(pageIndex, pageSize);
             ViewBag.PageSize = pageSize;
             ViewBag.Page = page;
             return View(items);
@@ -41,7 +41,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (Images.Count > 0 && Images != null)
+                if (Images != null && Images.Count > 0)
                 {
                     for (int i = 0; i < Images.Count; i++)
                     {
@@ -81,6 +81,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
             ViewBag.ProductCategory = new SelectList(db.ProductCategories.ToList(), "Id", "Title");
             return View(model);
         }
+
 
         public ActionResult Edit(int id)
         {
@@ -137,7 +138,21 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                 item.IsActive = !item.IsActive;
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return Json(new { success = true, isActive = item.IsActive });
+                return Json(new { success = true, isAcive = item.IsActive });
+            }
+
+            return Json(new { success = false });
+        }
+        [HttpPost]
+        public ActionResult IsHome(int id)
+        {
+            var item = db.Products.Find(id);
+            if (item != null)
+            {
+                item.IsHome = !item.IsHome;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, IsHome = item.IsHome });
             }
 
             return Json(new { success = false });
@@ -152,26 +167,10 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                 item.IsSale = !item.IsSale;
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return Json(new { success = true, isSale = item.IsSale });
+                return Json(new { success = true, IsSale = item.IsSale });
             }
 
             return Json(new { success = false });
         }
-
-        [HttpPost]
-        public ActionResult IsHome(int id)
-        {
-            var item = db.Products.Find(id);
-            if (item != null)
-            {
-                item.IsHome = !item.IsHome;
-                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                return Json(new { success = true, isHome = item.IsHome });
-            }
-
-            return Json(new { success = false });
-        }
-
     }
 }

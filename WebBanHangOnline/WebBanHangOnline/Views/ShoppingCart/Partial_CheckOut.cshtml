@@ -1,10 +1,11 @@
 ﻿@model WebBanHangOnline.Models.OrderViewModel
-@using (Ajax.BeginForm("CheckOut", "ShoppingCart", new AjaxOptions
+@using (Ajax.BeginForm("CheckOut", "Shoppingcart", new AjaxOptions
 {
     HttpMethod = "POST",
     UpdateTargetId = "load_data",
-    OnComplete = "OnSuccessCO",
-    OnFailure = "OnFailure"
+    OnSuccess = "OnSuccessCO",
+    OnFailure = "OnFailure",
+    OnBegin = "OnBeginCO"
 
 }, new { @Id = "myForm" }))
 {

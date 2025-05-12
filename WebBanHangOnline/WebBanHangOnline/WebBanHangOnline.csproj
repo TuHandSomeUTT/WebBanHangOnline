@@ -203,9 +203,11 @@
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
     <Compile Include="Areas\Admin\Controllers\SettingSystemController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StatisticalController.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Common\SettingHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -272,6 +274,14 @@
     <Compile Include="Migrations\202505021415517_updateSubcribe.Designer.cs">
       <DependentUpon>202505021415517_updateSubcribe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505061539179_UpdateOriginalPrice.cs" />
+    <Compile Include="Migrations\202505061539179_UpdateOriginalPrice.Designer.cs">
+      <DependentUpon>202505061539179_UpdateOriginalPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505110259156_editCategory.cs" />
+    <Compile Include="Migrations\202505110259156_editCategory.Designer.cs">
+      <DependentUpon>202505110259156_editCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\Filter.cs" />
@@ -306,6 +316,12 @@
     <Content Include="Content\assets\js\custom.js" />
     <Content Include="Content\assets\js\jquery-3.2.1.min.js" />
     <Content Include="Content\assets\js\single_custom.js" />
+    <Content Include="Content\assets\plugins\chart.js\Chart.bundle.js" />
+    <Content Include="Content\assets\plugins\chart.js\Chart.bundle.min.js" />
+    <Content Include="Content\assets\plugins\chart.js\Chart.css" />
+    <Content Include="Content\assets\plugins\chart.js\Chart.js" />
+    <Content Include="Content\assets\plugins\chart.js\Chart.min.css" />
+    <Content Include="Content\assets\plugins\chart.js\Chart.min.js" />
     <Content Include="Content\assets\plugins\easing\easing.js" />
     <Content Include="Content\assets\plugins\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Content\assets\plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -314,6 +330,146 @@
     <Content Include="Content\assets\plugins\Isotope\isotope.pkgd.min.js" />
     <Content Include="Content\assets\plugins\jquery-ui-1.12.1.custom\jquery-ui.css" />
     <Content Include="Content\assets\plugins\jquery-ui-1.12.1.custom\jquery-ui.js" />
+    <Content Include="Content\assets\plugins\moment\locales.js" />
+    <Content Include="Content\assets\plugins\moment\locales.min.js" />
+    <Content Include="Content\assets\plugins\moment\locale\af.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ar-dz.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ar-kw.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ar-ly.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ar-ma.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ar-sa.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ar-tn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ar.js" />
+    <Content Include="Content\assets\plugins\moment\locale\az.js" />
+    <Content Include="Content\assets\plugins\moment\locale\be.js" />
+    <Content Include="Content\assets\plugins\moment\locale\bg.js" />
+    <Content Include="Content\assets\plugins\moment\locale\bm.js" />
+    <Content Include="Content\assets\plugins\moment\locale\bn-bd.js" />
+    <Content Include="Content\assets\plugins\moment\locale\bn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\bo.js" />
+    <Content Include="Content\assets\plugins\moment\locale\br.js" />
+    <Content Include="Content\assets\plugins\moment\locale\bs.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ca.js" />
+    <Content Include="Content\assets\plugins\moment\locale\cs.js" />
+    <Content Include="Content\assets\plugins\moment\locale\cv.js" />
+    <Content Include="Content\assets\plugins\moment\locale\cy.js" />
+    <Content Include="Content\assets\plugins\moment\locale\da.js" />
+    <Content Include="Content\assets\plugins\moment\locale\de-at.js" />
+    <Content Include="Content\assets\plugins\moment\locale\de-ch.js" />
+    <Content Include="Content\assets\plugins\moment\locale\de.js" />
+    <Content Include="Content\assets\plugins\moment\locale\dv.js" />
+    <Content Include="Content\assets\plugins\moment\locale\el.js" />
+    <Content Include="Content\assets\plugins\moment\locale\en-au.js" />
+    <Content Include="Content\assets\plugins\moment\locale\en-ca.js" />
+    <Content Include="Content\assets\plugins\moment\locale\en-gb.js" />
+    <Content Include="Content\assets\plugins\moment\locale\en-ie.js" />
+    <Content Include="Content\assets\plugins\moment\locale\en-il.js" />
+    <Content Include="Content\assets\plugins\moment\locale\en-in.js" />
+    <Content Include="Content\assets\plugins\moment\locale\en-nz.js" />
+    <Content Include="Content\assets\plugins\moment\locale\en-SG.js" />
+    <Content Include="Content\assets\plugins\moment\locale\eo.js" />
+    <Content Include="Content\assets\plugins\moment\locale\es-do.js" />
+    <Content Include="Content\assets\plugins\moment\locale\es-mx.js" />
+    <Content Include="Content\assets\plugins\moment\locale\es-us.js" />
+    <Content Include="Content\assets\plugins\moment\locale\es.js" />
+    <Content Include="Content\assets\plugins\moment\locale\et.js" />
+    <Content Include="Content\assets\plugins\moment\locale\eu.js" />
+    <Content Include="Content\assets\plugins\moment\locale\fa.js" />
+    <Content Include="Content\assets\plugins\moment\locale\fi.js" />
+    <Content Include="Content\assets\plugins\moment\locale\fil.js" />
+    <Content Include="Content\assets\plugins\moment\locale\fo.js" />
+    <Content Include="Content\assets\plugins\moment\locale\fr-ca.js" />
+    <Content Include="Content\assets\plugins\moment\locale\fr-ch.js" />
+    <Content Include="Content\assets\plugins\moment\locale\fr.js" />
+    <Content Include="Content\assets\plugins\moment\locale\fy.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ga.js" />
+    <Content Include="Content\assets\plugins\moment\locale\gd.js" />
+    <Content Include="Content\assets\plugins\moment\locale\gl.js" />
+    <Content Include="Content\assets\plugins\moment\locale\gom-deva.js" />
+    <Content Include="Content\assets\plugins\moment\locale\gom-latn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\gu.js" />
+    <Content Include="Content\assets\plugins\moment\locale\he.js" />
+    <Content Include="Content\assets\plugins\moment\locale\hi.js" />
+    <Content Include="Content\assets\plugins\moment\locale\hr.js" />
+    <Content Include="Content\assets\plugins\moment\locale\hu.js" />
+    <Content Include="Content\assets\plugins\moment\locale\hy-am.js" />
+    <Content Include="Content\assets\plugins\moment\locale\id.js" />
+    <Content Include="Content\assets\plugins\moment\locale\is.js" />
+    <Content Include="Content\assets\plugins\moment\locale\it-ch.js" />
+    <Content Include="Content\assets\plugins\moment\locale\it.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ja.js" />
+    <Content Include="Content\assets\plugins\moment\locale\jv.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ka.js" />
+    <Content Include="Content\assets\plugins\moment\locale\kk.js" />
+    <Content Include="Content\assets\plugins\moment\locale\km.js" />
+    <Content Include="Content\assets\plugins\moment\locale\kn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ko.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ku.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ky.js" />
+    <Content Include="Content\assets\plugins\moment\locale\lb.js" />
+    <Content Include="Content\assets\plugins\moment\locale\lo.js" />
+    <Content Include="Content\assets\plugins\moment\locale\lt.js" />
+    <Content Include="Content\assets\plugins\moment\locale\lv.js" />
+    <Content Include="Content\assets\plugins\moment\locale\me.js" />
+    <Content Include="Content\assets\plugins\moment\locale\mi.js" />
+    <Content Include="Content\assets\plugins\moment\locale\mk.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ml.js" />
+    <Content Include="Content\assets\plugins\moment\locale\mn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\mr.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ms-my.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ms.js" />
+    <Content Include="Content\assets\plugins\moment\locale\mt.js" />
+    <Content Include="Content\assets\plugins\moment\locale\my.js" />
+    <Content Include="Content\assets\plugins\moment\locale\nb.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ne.js" />
+    <Content Include="Content\assets\plugins\moment\locale\nl-be.js" />
+    <Content Include="Content\assets\plugins\moment\locale\nl.js" />
+    <Content Include="Content\assets\plugins\moment\locale\nn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\oc-lnc.js" />
+    <Content Include="Content\assets\plugins\moment\locale\pa-in.js" />
+    <Content Include="Content\assets\plugins\moment\locale\pl.js" />
+    <Content Include="Content\assets\plugins\moment\locale\pt-br.js" />
+    <Content Include="Content\assets\plugins\moment\locale\pt.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ro.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ru.js" />
+    <Content Include="Content\assets\plugins\moment\locale\sd.js" />
+    <Content Include="Content\assets\plugins\moment\locale\se.js" />
+    <Content Include="Content\assets\plugins\moment\locale\si.js" />
+    <Content Include="Content\assets\plugins\moment\locale\sk.js" />
+    <Content Include="Content\assets\plugins\moment\locale\sl.js" />
+    <Content Include="Content\assets\plugins\moment\locale\sq.js" />
+    <Content Include="Content\assets\plugins\moment\locale\sr-cyrl.js" />
+    <Content Include="Content\assets\plugins\moment\locale\sr.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ss.js" />
+    <Content Include="Content\assets\plugins\moment\locale\sv.js" />
+    <Content Include="Content\assets\plugins\moment\locale\sw.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ta.js" />
+    <Content Include="Content\assets\plugins\moment\locale\te.js" />
+    <Content Include="Content\assets\plugins\moment\locale\tet.js" />
+    <Content Include="Content\assets\plugins\moment\locale\tg.js" />
+    <Content Include="Content\assets\plugins\moment\locale\th.js" />
+    <Content Include="Content\assets\plugins\moment\locale\tk.js" />
+    <Content Include="Content\assets\plugins\moment\locale\tl-ph.js" />
+    <Content Include="Content\assets\plugins\moment\locale\tlh.js" />
+    <Content Include="Content\assets\plugins\moment\locale\tr.js" />
+    <Content Include="Content\assets\plugins\moment\locale\tzl.js" />
+    <Content Include="Content\assets\plugins\moment\locale\tzm-latn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\tzm.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ug-cn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\uk.js" />
+    <Content Include="Content\assets\plugins\moment\locale\ur.js" />
+    <Content Include="Content\assets\plugins\moment\locale\uz-latn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\uz.js" />
+    <Content Include="Content\assets\plugins\moment\locale\vi.js" />
+    <Content Include="Content\assets\plugins\moment\locale\x-pseudo.js" />
+    <Content Include="Content\assets\plugins\moment\locale\yo.js" />
+    <Content Include="Content\assets\plugins\moment\locale\zh-cn.js" />
+    <Content Include="Content\assets\plugins\moment\locale\zh-hk.js" />
+    <Content Include="Content\assets\plugins\moment\locale\zh-mo.js" />
+    <Content Include="Content\assets\plugins\moment\locale\zh-tw.js" />
+    <Content Include="Content\assets\plugins\moment\moment-with-locales.js" />
+    <Content Include="Content\assets\plugins\moment\moment-with-locales.min.js" />
+    <Content Include="Content\assets\plugins\moment\moment.min.js" />
     <Content Include="Content\assets\plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
     <Content Include="Content\assets\plugins\OwlCarousel2-2.2.1\animate.css" />
     <Content Include="Content\assets\plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
@@ -3376,6 +3532,10 @@
     <Content Include="Content\assets\dist\js\adminlte.min.js.map" />
     <Content Include="Areas\Admin\Views\SettingSystem\Index.cshtml" />
     <Content Include="Areas\Admin\Views\SettingSystem\Partial_Setting.cshtml" />
+    <Content Include="Areas\Admin\Views\Statistical\Index.cshtml" />
+    <Content Include="Content\assets\plugins\moment\locales.min.js.map" />
+    <Content Include="Content\assets\plugins\moment\moment-with-locales.min.js.map" />
+    <Content Include="Content\assets\plugins\moment\moment.min.js.map" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -3463,6 +3623,7 @@
     <Content Include="Views\Home\Partial_Subcribe.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3540,6 +3701,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505021415517_updateSubcribe.resx">
       <DependentUpon>202505021415517_updateSubcribe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505061539179_UpdateOriginalPrice.resx">
+      <DependentUpon>202505061539179_UpdateOriginalPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505110259156_editCategory.resx">
+      <DependentUpon>202505110259156_editCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

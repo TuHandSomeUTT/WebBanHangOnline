@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebBanHangOnline.Models.EF.Category>
+﻿﻿@model IEnumerable<WebBanHangOnline.Models.EF.Category>
 
 @if (Model != null && Model.Any())
 {
@@ -9,13 +9,17 @@
             {
                 item.Alias = "";
             }
+            if (!string.IsNullOrEmpty(item.Link))
+            {
+                item.Alias = item.Link;
+            }
             <li><a href="/@item.Alias">@item.Title</a></li>
         }
-        @*<li><a href="#">home</a></li>
-        <li><a href="#">shop</a></li>
-        <li><a href="#">promotion</a></li>
-        <li><a href="#">pages</a></li>
-        <li><a href="#">blog</a></li>
-        <li><a href="contact.html">contact</a></li>*@
+
+        @*<li><a href="#">shop</a></li>
+            <li><a href="#">promotion</a></li>
+            <li><a href="#">pages</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="contact.html">contact</a></li>*@
     </ul>
 }

@@ -101,14 +101,14 @@
                                             @Html.ValidationMessageFor(x => x.Detail, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Số Lượng</label>
                                                     @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", @Value = "1" })
                                                     @Html.ValidationMessageFor(x => x.Quantity, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Giá</label>
                                                     <input type="text" name="demoPrice" value="@Model.Price" id="demoPrice" class="form-control auto" data-a-sign="VND " data-a-dec="," data-a-sep=".">
@@ -116,12 +116,20 @@
                                                     @Html.ValidationMessageFor(x => x.Price, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Giá Khuyến Mãi</label>
                                                     <input type="text" name="demoPriceSale" value="@Model.PriceSale" id="demoPriceSale" class="form-control auto" data-a-sign="VND " data-a-dec="," data-a-sep=".">
                                                     @Html.HiddenFor(x => x.PriceSale, new { @class = "form-control", @placeholder = "Giá Khuyến Mãi" })
                                                     @Html.ValidationMessageFor(x => x.PriceSale, null, new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Giá Nhập</label>
+                                                    <input type="text" name="demoOriginalPrice" value="@Model.OriginalPrice" id="demoOriginalPrice" class="form-control auto" data-a-sign="VND " data-a-dec="," data-a-sep=".">
+                                                    @Html.HiddenFor(x => x.OriginalPrice, new { @class = "form-control", @placeholder = "Giá Nhập" })
+                                                    @Html.ValidationMessageFor(x => x.OriginalPrice, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
                                         </div>
@@ -229,6 +237,11 @@
                 var demoGet = $('#demoPriceSale').autoNumeric('get');
                 $('#PriceSale').val(demoGet);
                 $('#PriceSale').autoNumeric('set', demoGet);
+            });
+            $('#demoOriginalPrice').bind('blur focusout keypress keyup', function () {
+                var demoGet = $('#demoOriginalPrice').autoNumeric('get');
+                $('#OriginalPrice').val(demoGet);
+                $('#OriginalPrice').autoNumeric('set', demoGet);
             });
             CKEDITOR.replace('txtDetail', {
                 customConfig: '/content/ckeditor/config.js',

@@ -22,6 +22,7 @@ namespace WebBanHangOnline.Controllers
             }
             return View();
         }
+        [AllowAnonymous]
         public ActionResult CheckOut()
         {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
@@ -31,12 +32,12 @@ namespace WebBanHangOnline.Controllers
             }
             return View();
         }
-
+        [AllowAnonymous]
         public ActionResult CheckOutSuccess()
         {
             return View();
         }
-
+        [AllowAnonymous]
         public ActionResult Partial_Item_ThanhToan()
         {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
@@ -46,7 +47,7 @@ namespace WebBanHangOnline.Controllers
             }
             return PartialView();
         }
-
+        [AllowAnonymous]
         public ActionResult Partial_Item_Cart()
         {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
@@ -56,7 +57,7 @@ namespace WebBanHangOnline.Controllers
             }
             return PartialView();
         }
-
+        [AllowAnonymous]
         public ActionResult ShowCount()
         {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
@@ -66,13 +67,14 @@ namespace WebBanHangOnline.Controllers
             }
             return Json(new { Count = 0 }, JsonRequestBehavior.AllowGet);
         }
-
+        [AllowAnonymous]
         public ActionResult Partial_CheckOut()
         {
             return PartialView();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult CheckOut(OrderViewModel req)
         {
@@ -148,7 +150,7 @@ namespace WebBanHangOnline.Controllers
             }
             return Json(code);
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult AddToCart(int id, int quantity)
         {
@@ -186,7 +188,7 @@ namespace WebBanHangOnline.Controllers
             }
             return Json(code);
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Update(int id, int quantity)
         {
@@ -198,7 +200,7 @@ namespace WebBanHangOnline.Controllers
             }
             return Json(new { Success = false });
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Delete(int id)
         {
@@ -215,7 +217,7 @@ namespace WebBanHangOnline.Controllers
             }
             return Json(code);
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult DeleteAll()
         {

@@ -135,3 +135,5 @@ D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\bin\System.Threading.Task
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.updateEmail.resources
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.addFieldCreatedDate27042025.resources
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.updateSubcribe.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.UpdateOriginalPrice.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.editCategory.resources

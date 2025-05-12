@@ -67,7 +67,7 @@
                         }
                     </div>
                 </div>*@
-            <table class="table table-hover">
+            <table class="table table-hover text-center">
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="SelectAll" /></th>
@@ -81,40 +81,33 @@
                         <th>Home</th>
                         <th>Sale</th>
                         <th>Hiển Thị</th>
+
                         <th style="width:150px"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @if (Model != null && Model.Any())
                     {
-                        var i = 1;
-                        i = ((ViewBag.Page - 1) * ViewBag.PageSize) + 1;
+                        var i = ((ViewBag.Page - 1) * ViewBag.PageSize) + 1;
                         foreach (var item in Model)
                         {
                             var strCheck = item.IsActive ? "<i class='fa fa-check text-success'> </i>" : "<i class='fas fa-times text-danger'> </i>";
                             var strCheckHome = item.IsHome ? "<i class='fa fa-check text-success'> </i>" : "<i class='fas fa-times text-danger'> </i>";
                             var strCheckSale = item.IsSale ? "<i class='fa fa-check text-success'> </i>" : "<i class='fas fa-times text-danger'> </i>";
+                            var strImg = "";
+                            var checkImage = item.ProductImage.FirstOrDefault(x => x.IsDefault);
+                            if (checkImage != null)
+                            {
+                                strImg = checkImage.Image;
+                            }
                             <tr id="trow_@item.Id">
                                 <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
                                 <td>@i</td>
-                                <td><img class="imgproduct" data-id="@item.Id" src="@item.ProductImage.FirstOrDefault(x=>x.IsDefault).Image" width="60" /></td>
-                                @*<td>
-                                        @{
-                                            var defaultImage = item.ProductImage.FirstOrDefault(x => x.IsDefault);
-                                        }
-                                        @if (defaultImage != null)
-                                        {
-                                            <img class="imgproduct" data-id="@item.Id" src="@defaultImage.Image" width="60" />
-                                        }
-                                        else
-                                        {
-                                            <img class="imgproduct" data-id="@item.Id" src="~/Uploads/images/not_available.jpg" width="60" />
-                                        }
-                                    </td>*@
+                                <td><img class="imgproduct" data-id="@item.Id" src="@strImg" width="60" /></td>
                                 <td>@item.Title</td>
                                 <td>@item.ProductCategory.Title</td>
                                 <td>@item.Quantity</td>
-                                <td>@item.Price</td>
+                                <td>@WebBanHangOnline.Common.Common.FormatNumber(item.Price, 0) đ</td>
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                 <td class="text-center">
                                     <a href='#' data-id="@item.Id" class="btnHome">@Html.Raw(strCheckHome)</a>
