@@ -9,6 +9,16 @@
 
 }, new { @Id = "myForm" }))
 {
+    <script>
+        function OnSuccessCO(res) {
+            if (res.Success) {
+                location.href = "/ShoppingCart/CheckOutSuccess";
+            }
+        }
+        //function OnFailure() {
+
+        //}
+    </script>
     @Html.AntiForgeryToken()
     <h3>Thông Tin Khách Hàng</h3>
     <div class="form-group">

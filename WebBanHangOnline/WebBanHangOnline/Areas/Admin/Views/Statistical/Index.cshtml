@@ -73,6 +73,11 @@
     <script src="~/Content/clients/plugins/chart.js/Chart.min.js"></script>
     <script src="~/Content/assets/plugins/moment/moment.min.js"></script>
     <script>
+        function formatVietnamCurrency(amount) {
+            if (isNaN(amount)) return "0 ₫";
+            return amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        }
+
         $(function () {
             /* ChartJS
              * -------
@@ -156,8 +161,10 @@
                 strHtml += "<tr>";
                 strHtml += "<td>" + (i + 1) + "</td>";
                 strHtml += "<td>" + strDate + "</td>";
-                strHtml += "<td>" + item.DoanhThu + "</td>";
-                strHtml += "<td>" + item.LoiNhuan + "</td>";
+                //strHtml += "<td>" + item.DoanhThu + "</td>";
+                //strHtml += "<td>" + item.LoiNhuan + "</td>";
+                strHtml += "<td>" + formatVietnamCurrency(item.DoanhThu) + "</td>";
+                strHtml += "<td>" + formatVietnamCurrency(item.LoiNhuan) + "</td>";
                 strHtml += "</tr>";
             });
             $('#load_data').html(strHtml);

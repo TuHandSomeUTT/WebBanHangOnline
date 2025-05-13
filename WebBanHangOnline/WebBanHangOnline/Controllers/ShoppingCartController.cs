@@ -97,6 +97,7 @@ namespace WebBanHangOnline.Controllers
 
                     }));
                     order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));
+                    order.Quantity = cart.Items.Sum(x => x.Quantity); // ✅ Gán tổng số lượng sản phẩm (Bài học cột sống: không gán và order bị 0 sản phẩm :)))
                     order.TypePayment = req.TypePayment;
                     order.CreatedDate = DateTime.Now;
                     order.ModifiedDate = DateTime.Now;
@@ -145,7 +146,8 @@ namespace WebBanHangOnline.Controllers
                     contentAdmin = contentAdmin.Replace("{{TongTien}}", WebBanHangOnline.Common.Common.FormatNumber(tongTien, 0));
                     WebBanHangOnline.Common.Common.SendMail("Gốm Sứ Bình Xuyên", "Đơn hàng mới #" + order.Code, contentAdmin.ToString(), ConfigurationManager.AppSettings["EmailAdmin"]);
                     cart.ClearCart();
-                    return RedirectToAction("CheckOutSuccess");
+                    code = new { Success = true, code = 1 };
+                    //return RedirectToAction("CheckOutSuccess");
                 }
             }
             return Json(code);
