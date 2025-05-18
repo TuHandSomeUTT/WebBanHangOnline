@@ -65,6 +65,13 @@
             }
         }
         $(document).ready(function () {
+            $('body').on('change', '#drTypePayment', function () {//bắt sự kiện check bên partial_checkout, nếu người dùng chọn COD (id =1) thì ẩn còn lại nếu chọn CK (id = 2) thì show ra
+                var type = $(this).val();
+                $('#load_form_payment').hide();
+                if (type == "2") {
+                    $('#load_form_payment').show();
+                }
+            });
             $('#myForm').validate({
                 rules: {
                     'CustomerName': {

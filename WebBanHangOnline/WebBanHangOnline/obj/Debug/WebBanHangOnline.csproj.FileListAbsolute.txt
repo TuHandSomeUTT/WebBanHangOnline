@@ -137,3 +137,4 @@ D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnlin
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.updateSubcribe.resources
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.UpdateOriginalPrice.resources
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.editCategory.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.AddStatus.resources

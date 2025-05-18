@@ -31,10 +31,11 @@
                 <thead class="text-center">
                     <tr>
                         <th>#</th>
-                        <th>Mã đơn hàng</th>
-                        <th>Tên khách hàng</th>
+                        <th>Mã Đơn Hàng</th>
+                        <th>Tên Khách Hàng</th>
                         <th>Phone</th>
                         <th>Tiền</th>
+                        <th>Phương Thức Thanh Toán</th>
                         <th>Trạng Thái</th>
                         <th>Ngày Tạo</th>
                         <th>Thao Tác</th>
@@ -53,11 +54,29 @@
                                 <td>@item.CustomerName</td>
                                 <td>@item.Phone</td>
                                 <td>@WebBanHangOnline.Common.Common.FormatNumber(item.TotalAmount, 0) đ</td>
-                                <td>@(item.TypePayment == 1 ? "Chờ thanh toán" : "Đã thanh toán")</td>
+                                <td>@(item.TypePayment == 1 ? "COD" : "Chuyển Khoản")</td>
+                                <td>
+                                    @if (item.Status == 1)
+                                    {
+                                        <span>Chưa Thanh Toán</span>
+                                    }
+                                    @if (item.Status == 2)
+                                    {
+                                        <span>Đã Thanh Toán</span>
+                                    }
+                                    @if (item.Status == 3)
+                                    {
+                                        <span>Đã Hoàn Thành</span>
+                                    }
+                                    @if (item.Status == 4)
+                                    {
+                                        <span>Đã Hủy</span>
+                                    }
+                                </td>
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                 <td>
-                                    <a href="/admin/order/view/@item.Id" class="btn btn-sm btn-success">Xem</a>
-                                    <a href="#" class="btn btn-sm btn-warning btnCapNhat" data-id="@item.Id">Cập Nhật</a>
+                                    <a href="/admin/order/view/@item.Id" class="btn btn-sm btn-success" title="Xem chi tiết đơn hàng">Xem</a>
+                                    <a href="#" class="btn btn-sm btn-warning btnCapNhat" data-id="@item.Id" title="Cập nhật trạng thái">Cập Nhật</a>
                                 </td>
                             </tr>
                             i++;
@@ -100,6 +119,12 @@
                     <select class="form-control" id="ddTrangThai">
                         <option value="2">
                             Đã thanh toán
+                        </option>
+                        <option value="3">
+                            Đã hoàn thành
+                        </option>
+                        <option value="4">
+                            Đã hủy
                         </option>
                     </select>
                 </div>

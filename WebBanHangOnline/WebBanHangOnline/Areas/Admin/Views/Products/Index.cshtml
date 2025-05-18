@@ -81,6 +81,8 @@
                         <th>Home</th>
                         <th>Sale</th>
                         <th>Hiển Thị</th>
+                        <th>Hot</th>
+                        <th>Nổi Bật</th>
 
                         <th style="width:150px"></th>
                     </tr>
@@ -94,6 +96,8 @@
                             var strCheck = item.IsActive ? "<i class='fa fa-check text-success'> </i>" : "<i class='fas fa-times text-danger'> </i>";
                             var strCheckHome = item.IsHome ? "<i class='fa fa-check text-success'> </i>" : "<i class='fas fa-times text-danger'> </i>";
                             var strCheckSale = item.IsSale ? "<i class='fa fa-check text-success'> </i>" : "<i class='fas fa-times text-danger'> </i>";
+                            var strCheckHot = item.IsHot ? "<i class='fa fa-check text-success'> </i>" : "<i class='fas fa-times text-danger'> </i>";
+                            var strCheckFeature = item.IsFeature ? "<i class='fa fa-check text-success'> </i>" : "<i class='fas fa-times text-danger'> </i>";
                             var strImg = "";
                             var checkImage = item.ProductImage.FirstOrDefault(x => x.IsDefault);
                             if (checkImage != null)
@@ -117,6 +121,12 @@
                                 </td>
                                 <td class="text-center">
                                     <a href='#' data-id="@item.Id" class="btnActive">@Html.Raw(strCheck)</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href='#' data-id="@item.Id" class="btnHot">@Html.Raw(strCheckHot)</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href='#' data-id="@item.Id" class="btnFeature">@Html.Raw(strCheckFeature)</a>
                                 </td>
                                 <td>
                                     <a href="/admin/products/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
@@ -301,6 +311,50 @@
                         success: function (rs) {
                             if (rs.success) {
                                 if (rs.isActive) {
+                                    btn.html("<i class='fa fa-check text-success'></i>");
+                                    //$(this).html("<i class='fa fa-check text-success'> </i>");
+                                } else {
+                                    btn.html("<i class='fas fa-times text-danger'></i>");
+                                    //$(this).html("<i class='fas fa-times text-danger'> </i>");
+                                }
+                            }
+                        }
+                    });
+                });
+
+                $('body').on('click', '.btnHot', function (e) {
+                    e.preventDefault();
+                    var btn = $(this);
+                    var id = btn.data("id");
+                    $.ajax({
+                        url: '/admin/products/IsHot',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                if (rs.isHot) {
+                                    btn.html("<i class='fa fa-check text-success'></i>");
+                                    //$(this).html("<i class='fa fa-check text-success'> </i>");
+                                } else {
+                                    btn.html("<i class='fas fa-times text-danger'></i>");
+                                    //$(this).html("<i class='fas fa-times text-danger'> </i>");
+                                }
+                            }
+                        }
+                    });
+                });
+
+                $('body').on('click', '.btnFeature', function (e) {
+                    e.preventDefault();
+                    var btn = $(this);
+                    var id = btn.data("id");
+                    $.ajax({
+                        url: '/admin/products/IsFeature',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                if (rs.isFeature) {
                                     btn.html("<i class='fa fa-check text-success'></i>");
                                     //$(this).html("<i class='fa fa-check text-success'> </i>");
                                 } else {

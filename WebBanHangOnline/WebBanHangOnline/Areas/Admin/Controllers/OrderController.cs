@@ -48,12 +48,12 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
             if (item != null)
             {
                 db.Orders.Attach(item);
-                item.TypePayment = trangthai;
-                db.Entry(item).Property( x => x.TypePayment).IsModified = true;
+                item.Status = trangthai;
+                db.Entry(item).Property(x => x.Status).IsModified = true;
                 db.SaveChanges();
-                return Json(new {message = "Success", Success = true});
+                return Json(new { message = "Success", Success = true });
             }
-                return Json(new { message = "Unsuccess", Success = false });
+            return Json(new { message = "Unsuccess", Success = false });
         }
     }
 }

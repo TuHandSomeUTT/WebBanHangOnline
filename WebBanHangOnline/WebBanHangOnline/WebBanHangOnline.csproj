@@ -282,6 +282,10 @@
     <Compile Include="Migrations\202505110259156_editCategory.Designer.cs">
       <DependentUpon>202505110259156_editCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505180343107_AddStatus.cs" />
+    <Compile Include="Migrations\202505180343107_AddStatus.Designer.cs">
+      <DependentUpon>202505180343107_AddStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\Filter.cs" />
@@ -304,6 +308,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\Payments\VnPayLibrary.cs" />
     <Compile Include="Models\SettingSystemViewModel.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\ThongKeViewModel.cs" />
@@ -3624,6 +3629,7 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\VnpayReturn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3707,6 +3713,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505110259156_editCategory.resx">
       <DependentUpon>202505110259156_editCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505180343107_AddStatus.resx">
+      <DependentUpon>202505180343107_AddStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

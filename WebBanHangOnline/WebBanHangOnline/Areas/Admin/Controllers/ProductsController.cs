@@ -17,7 +17,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
         public ActionResult Index(int? page)
         {
             IEnumerable<Product> items = db.Products.OrderByDescending(x => x.Id);
-            var pageSize = 10;
+            var pageSize = 5;
             if (page == null)
             {
                 page = 1;
@@ -138,7 +138,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                 item.IsActive = !item.IsActive;
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return Json(new { success = true, isAcive = item.IsActive });
+                return Json(new { success = true, isActive = item.IsActive });
             }
 
             return Json(new { success = false });
@@ -152,7 +152,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                 item.IsHome = !item.IsHome;
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return Json(new { success = true, IsHome = item.IsHome });
+                return Json(new { success = true, isHome = item.IsHome });
             }
 
             return Json(new { success = false });
@@ -167,7 +167,37 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                 item.IsSale = !item.IsSale;
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return Json(new { success = true, IsSale = item.IsSale });
+                return Json(new { success = true, isSale = item.IsSale });
+            }
+
+            return Json(new { success = false });
+        }
+
+        [HttpPost]
+        public ActionResult IsHot(int id)
+        {
+            var item = db.Products.Find(id);
+            if (item != null)
+            {
+                item.IsHot = !item.IsHot;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, isHot = item.IsHot });
+            }
+
+            return Json(new { success = false });
+        }
+
+        [HttpPost]
+        public ActionResult IsFeature(int id)
+        {
+            var item = db.Products.Find(id);
+            if (item != null)
+            {
+                item.IsFeature = !item.IsFeature;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, isFeature = item.IsFeature });
             }
 
             return Json(new { success = false });

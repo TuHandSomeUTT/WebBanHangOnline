@@ -146,6 +146,14 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
+                                                        @Html.CheckBoxFor(x => x.IsHome, new { @class = "custom-control-input", @id = "IsHomeCheckbox" })
+                                                        <label for="IsHomeCheckbox" class="custom-control-label">Home</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <div class="custom-control custom-checkbox">
                                                         @Html.CheckBoxFor(x => x.IsHot, new { @class = "custom-control-input", @id = "IsHotCheckbox" })
                                                         <label for="IsHotCheckbox" class="custom-control-label">Sản Phẩm Hot</label>
                                                     </div>
