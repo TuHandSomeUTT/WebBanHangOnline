@@ -3553,6 +3553,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jsConvert.js" />
     <Content Include="Scripts\jsShopping.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Uploads\images\not_available.jpg" />
@@ -3630,6 +3631,7 @@
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\ShoppingCart\VnpayReturn.cshtml" />
+    <Content Include="Views\Account\Profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

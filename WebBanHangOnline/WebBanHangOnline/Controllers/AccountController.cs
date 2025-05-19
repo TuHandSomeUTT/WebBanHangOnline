@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WebBanHangOnline.Models;
+using static Dapper.SqlMapper;
 
 namespace WebBanHangOnline.Controllers
 {
@@ -22,7 +23,7 @@ namespace WebBanHangOnline.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -34,9 +35,9 @@ namespace WebBanHangOnline.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -50,6 +51,34 @@ namespace WebBanHangOnline.Controllers
             {
                 _userManager = value;
             }
+        }
+        // Profile khách hàng
+        public async Task<ActionResult> Profile()
+        {
+            var user = await UserManager.FindByNameAsync(User.Identity.Name);
+            var item = new CreateAccountViewModel();
+            item.Email = user.Email;
+            item.FullName = user.Fullname;
+            item.Phone = user.Phone;
+            item.UserName = user.UserName;
+            item.CreatedDate = user.CreatedDate;
+            return View(item);
+        }
+
+        // Cập nhật thông tin KH
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> PostProfile(CreateAccountViewModel req)
+        {
+            var user = await UserManager.FindByEmailAsync(req.Email);
+            user.Fullname = req.FullName;
+            user.Phone = req.Phone;
+            var rs = await UserManager.UpdateAsync(user);
+            if (rs.Succeeded)
+            {
+                return RedirectToAction("Profile");
+            }
+            return View(req);
         }
 
         //
@@ -128,7 +157,7 @@ namespace WebBanHangOnline.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -187,8 +216,11 @@ namespace WebBanHangOnline.Controllers
 
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = false }, identity);
+            // Sau khi tạo user và gán role xong
+            return RedirectToAction("Login", "Account");
 
-            return RedirectToAction("Index", "Home");
+            //return RedirectToAction("Index", "Home");
+            /*Lỗi này xảy ra khi AntiForgeryToken sinh ra cho một user anonymous, nhưng sau khi đăng ký thì user trở thành authenticated, khiến token không còn hợp lệ. Em sửa bằng cách redirect sang action mới sau khi đăng ký, để token được sinh lại đúng context người dùng mới*/
         }
 
         //

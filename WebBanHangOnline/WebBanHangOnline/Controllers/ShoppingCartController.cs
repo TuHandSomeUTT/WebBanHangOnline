@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -10,10 +11,49 @@ using WebBanHangOnline.Models.Payments;
 
 namespace WebBanHangOnline.Controllers
 {
+    [Authorize]
     public class ShoppingCartController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+
+        public ShoppingCartController()
+        {
+        }
+
+        public ShoppingCartController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        {
+            UserManager = userManager;
+            SignInManager = signInManager;
+        }
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
         // GET: ShoppingCart
+        [AllowAnonymous] //cho phép vào web khi chưa login
         public ActionResult Index()
         {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
@@ -132,6 +172,11 @@ namespace WebBanHangOnline.Controllers
         [AllowAnonymous]
         public ActionResult Partial_CheckOut()
         {
+            var user = UserManager.FindByNameAsync(User.Identity.Name).Result;
+            if (user != null)
+            {
+                ViewBag.User = user;
+            }
             return PartialView();
         }
 

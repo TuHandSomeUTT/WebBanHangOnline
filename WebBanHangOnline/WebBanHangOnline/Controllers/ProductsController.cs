@@ -48,7 +48,7 @@ namespace WebBanHangOnline.Controllers
 
         public ActionResult Partial_ItemsByCateId()
         {
-            var items = db.Products.Where(x => x.IsHome && x.IsActive).Take(12).ToList();
+            var items = db.Products.Where(x => x.IsHome && x.IsActive).Take(12).ToList(); //max là 12 sp
             return PartialView(items);
         }
 
