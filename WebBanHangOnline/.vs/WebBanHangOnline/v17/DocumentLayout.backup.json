@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "D:\\Asp.NET Workspace\\WebBanHangOnline\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\views\\shoppingcart\\partial_checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\shoppingcart\\partial_checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\areas\\admin\\controllers\\productimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\areas\\admin\\controllers\\productimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\wishlist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\wishlist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\products\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\products\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|d:\\asp.net workspace\\webbanhangonline\\webbanhangonline\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\shoppingcart\\partial_item_cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\shoppingcart\\partial_item_cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|D:\\Asp.NET Workspace\\WebBanHangOnline\\webbanhangonline\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3A615CFE-388F-4930-89AB-29E7595058BB}|WebBanHangOnline\\WebBanHangOnline.csproj|solutionrelative:webbanhangonline\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,80 +43,87 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ShoppingCartController.cs",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\ShoppingCartController.cs",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Controllers\\ShoppingCartController.cs",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\ShoppingCartController.cs",
-              "RelativeToolTip": "WebBanHangOnline\\Controllers\\ShoppingCartController.cs",
-              "ViewState": "AgIAAG8BAAAAAAAAAAAQwLcAAAAYAAAAAAAAAA==",
+              "Title": "ProductImageController.cs",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Areas\\Admin\\Controllers\\ProductImageController.cs",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Areas\\Admin\\Controllers\\ProductImageController.cs",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Areas\\Admin\\Controllers\\ProductImageController.cs",
+              "RelativeToolTip": "WebBanHangOnline\\Areas\\Admin\\Controllers\\ProductImageController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAwEEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T14:20:04.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T15:00:27.735Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Partial_CheckOut.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\Partial_CheckOut.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\ShoppingCart\\Partial_CheckOut.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\Partial_CheckOut.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\ShoppingCart\\Partial_CheckOut.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAADoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-19T14:20:02.339Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CheckOut.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\CheckOut.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\ShoppingCart\\CheckOut.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\CheckOut.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\ShoppingCart\\CheckOut.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-19T14:19:40.361Z",
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "WebBanHangOnline\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAFIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T14:52:09.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGsAAABkAAAAAAAAAA==",
+              "Title": "Partial_Item_Cart.cshtml",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\Partial_Item_Cart.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\ShoppingCart\\Partial_Item_Cart.cshtml",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\ShoppingCart\\Partial_Item_Cart.cshtml",
+              "RelativeToolTip": "WebBanHangOnline\\Views\\ShoppingCart\\Partial_Item_Cart.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-18T15:01:06.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T14:41:24.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Products\\Index.cshtml",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "WebBanHangOnline\\Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-22T14:39:58.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Detail.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Products\\Detail.cshtml",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Products\\Detail.cshtml",
+              "RelativeToolTip": "WebBanHangOnline\\Views\\Products\\Detail.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-22T14:37:33.191Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Account\\Profile.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\Account\\Profile.cshtml",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\Account\\Profile.cshtml",
-              "RelativeToolTip": "WebBanHangOnline\\Views\\Account\\Profile.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEQAAAA3AAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\WishList\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Views\\WishList\\Index.cshtml",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Views\\WishList\\Index.cshtml",
+              "RelativeToolTip": "WebBanHangOnline\\Views\\WishList\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACoAAACMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-18T14:30:51.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T13:55:52.371Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebBanHangOnline\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WebBanHangOnline\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAArwDUAAAAJAAAAAAAAAA==",
+              "Title": "WishListController.cs",
+              "DocumentMoniker": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\WishListController.cs",
+              "RelativeDocumentMoniker": "WebBanHangOnline\\Controllers\\WishListController.cs",
+              "ToolTip": "D:\\Asp.NET Workspace\\WebBanHangOnline\\WebBanHangOnline\\Controllers\\WishListController.cs",
+              "RelativeToolTip": "WebBanHangOnline\\Controllers\\WishListController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwDYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T14:02:59.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T15:28:45.434Z"
             }
           ]
         }

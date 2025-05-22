@@ -109,7 +109,12 @@
                                 <td>@i</td>
                                 <td><img class="imgproduct" data-id="@item.Id" src="@strImg" width="60" /></td>
                                 <td>@item.Title</td>
-                                <td>@item.ProductCategory.Title</td>
+                                <td>
+                                    @if (item.ProductCategory != null)
+                                    {
+                                        @item.ProductCategory.Title
+                                    }
+                                </td>
                                 <td>@item.Quantity</td>
                                 <td>@WebBanHangOnline.Common.Common.FormatNumber(item.Price, 0) đ</td>
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>

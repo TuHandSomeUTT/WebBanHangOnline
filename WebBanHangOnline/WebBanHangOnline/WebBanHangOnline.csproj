@@ -214,7 +214,9 @@
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -286,6 +288,22 @@
     <Compile Include="Migrations\202505180343107_AddStatus.Designer.cs">
       <DependentUpon>202505180343107_AddStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505191523316_InsertCustomerIdOrder.cs" />
+    <Compile Include="Migrations\202505191523316_InsertCustomerIdOrder.Designer.cs">
+      <DependentUpon>202505191523316_InsertCustomerIdOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505201343553_Table_Review.cs" />
+    <Compile Include="Migrations\202505201343553_Table_Review.Designer.cs">
+      <DependentUpon>202505201343553_Table_Review.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505201349424_Table_Review_Edit_ForeignKey.cs" />
+    <Compile Include="Migrations\202505201349424_Table_Review_Edit_ForeignKey.Designer.cs">
+      <DependentUpon>202505201349424_Table_Review_Edit_ForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505211522318_addTableWishList.cs" />
+    <Compile Include="Migrations\202505211522318_addTableWishList.Designer.cs">
+      <DependentUpon>202505211522318_addTableWishList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\Filter.cs" />
@@ -302,9 +320,11 @@
     <Compile Include="Models\EF\Product.cs" />
     <Compile Include="Models\EF\ProductCategory.cs" />
     <Compile Include="Models\EF\ProductImage.cs" />
+    <Compile Include="Models\EF\ReviewProduct.cs" />
     <Compile Include="Models\EF\Subscribe.cs" />
     <Compile Include="Models\EF\SystemSetting.cs" />
     <Compile Include="Models\EF\ThongKe.cs" />
+    <Compile Include="Models\EF\WishList.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
@@ -3632,6 +3652,9 @@
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\ShoppingCart\VnpayReturn.cshtml" />
     <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Review\_Review.cshtml" />
+    <Content Include="Views\Review\_Load_Review.cshtml" />
+    <Content Include="Views\WishList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3718,6 +3741,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505180343107_AddStatus.resx">
       <DependentUpon>202505180343107_AddStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505191523316_InsertCustomerIdOrder.resx">
+      <DependentUpon>202505191523316_InsertCustomerIdOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505201343553_Table_Review.resx">
+      <DependentUpon>202505201343553_Table_Review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505201349424_Table_Review_Edit_ForeignKey.resx">
+      <DependentUpon>202505201349424_Table_Review_Edit_ForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505211522318_addTableWishList.resx">
+      <DependentUpon>202505211522318_addTableWishList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -138,3 +138,7 @@ D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnlin
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.UpdateOriginalPrice.resources
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.editCategory.resources
 D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.AddStatus.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.InsertCustomerIdOrder.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.Table_Review.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.Table_Review_Edit_ForeignKey.resources
+D:\Asp.NET Workspace\WebBanHangOnline\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.addTableWishList.resources

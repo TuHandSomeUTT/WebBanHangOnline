@@ -15,6 +15,7 @@ namespace WebBanHangOnline.Models
         [Required(ErrorMessage = "Địa Chỉ Khách Hàng Là Trường Bắt Buộc")]
         public string Address { get; set; }
         public string Email { get; set; }
+        public string CustomerId { get; set; }
         public int TypePayment { get; set; }
         public int TypePaymentVN { get; set; }
     }

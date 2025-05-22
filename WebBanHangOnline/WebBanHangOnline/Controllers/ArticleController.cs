@@ -17,5 +17,9 @@ namespace WebBanHangOnline.Controllers
             // Truy vấn bài viết từ cơ sở dữ liệu theo alias được truyền từ route URL, tìm bài viết đầu tiên trong bảng Posts có Alias trùng với tham số URL
             return View(item);
         }
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
     }
 }

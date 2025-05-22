@@ -177,5 +177,10 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                 ModelState.AddModelError("", error);
             }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
     }
 }

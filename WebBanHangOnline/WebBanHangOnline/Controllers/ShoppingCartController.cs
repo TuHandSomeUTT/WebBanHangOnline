@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.Owin;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -53,7 +54,7 @@ namespace WebBanHangOnline.Controllers
             }
         }
         // GET: ShoppingCart
-        [AllowAnonymous] //cho phép vào web khi chưa login
+        [AllowAnonymous] //cho phép vào web và thực hiện các hành động khi chưa login(method nào cho phép thì người chưa login dùng được)
         public ActionResult Index()
         {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
@@ -210,6 +211,8 @@ namespace WebBanHangOnline.Controllers
                     order.CreatedDate = DateTime.Now;
                     order.ModifiedDate = DateTime.Now;
                     order.CreatedBy = req.Phone;
+                    if (User.Identity.IsAuthenticated)
+                    order.CustomerId = User.Identity.GetUserId();
                     Random rd = new Random();
                     order.Code = "DH" + rd.Next(0,9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);
                     //order.Email = req.Email;
