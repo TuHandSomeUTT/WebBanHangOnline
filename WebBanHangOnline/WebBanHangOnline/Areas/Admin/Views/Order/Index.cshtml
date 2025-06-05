@@ -27,6 +27,12 @@
             <h3 class="card-title">Danh Sách Đơn Hàng</h3>
         </div>
         <div class="card-body">
+            <!--Search form-->
+            <form method="get" action="/admin/order" class="form-inline mb-3">
+                <input type="text" name="searchText" value="@ViewBag.SearchText" class="form-control mr-2" placeholder="Tìm theo mã, tên, sđt, email, địa chỉ..." style="width: 300px;" />
+                <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+            </form>
+
             <table class="table table-bordered">
                 <thead class="text-center">
                     <tr>
@@ -87,7 +93,10 @@
 
             <div class="row">
                 <div class="col-6"></div>
-                <div class="col-6" style="text-align:right;">@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</div>
+                <div class="col-6" style="text-align:right;">
+                    @*@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))*@
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchText = ViewBag.SearchText }))
+                </div>
             </div>
         </div>
         <!-- /.card-body -->

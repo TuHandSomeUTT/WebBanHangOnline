@@ -65,6 +65,20 @@ namespace WebBanHangOnline.Controllers
             return Json(new { Success = false, Message = "Xóa chưa thành công." });
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult DeleteFromWishlist(int id)
+        {
+            var item = db.Wishlists.FirstOrDefault(x => x.Id == id && x.UserName == User.Identity.Name);
+            if (item != null)
+            {
+                db.Wishlists.Remove(item);
+                db.SaveChanges();
+                return Json(new { Success = true, Message = "Đã xóa sản phẩm khỏi danh sách yêu thích." });
+            }
+            return Json(new { Success = false, Message = "Không tìm thấy sản phẩm để xóa." });
+        }
+
         private ApplicationDbContext db = new ApplicationDbContext();
         protected override void Dispose(bool disposing)
         {

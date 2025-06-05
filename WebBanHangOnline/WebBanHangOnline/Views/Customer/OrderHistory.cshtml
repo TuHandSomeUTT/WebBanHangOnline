@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebBanHangOnline.Models.EF.Order>
+
+    @if (Model != null && Model.Any())
+    {
+        var i = 1;
+        <h2>Lịch Sử Mua Hàng</h2>
+        <table class="table table-bordered table-striped text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>STT</th>
+                    <th>Mã đơn hàng</th>
+                    <th>Ngày đặt</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th>Thanh toán</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.Code</td>
+                        <td>@item.CreatedDate.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@WebBanHangOnline.Common.Common.FormatNumber(item.TotalAmount, 0) đ</td>
+                        <td>
+                            @{
+                                var status = "Chờ xử lý";
+                                switch (item.Status)
+                                {
+                                    case 1: status = "Chưa thanh toán"; break;
+                                    case 2: status = "Đã thanh toán"; break;
+                                    case 3: status = "Hoàn thành"; break;
+                                    case 4: status = "Đã hủy"; break;
+                                }
+                            }
+                            @status
+                        </td>
+                        <td>
+                            @(item.TypePayment == 1 ? "COD" : "Chuyển khoản")
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Details", "Customer", new { id = item.Id })" class="btn btn-sm btn-info">Xem chi tiết</a>
+                        </td>
+                    </tr>
+                    i++;
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning">Bạn chưa có đơn hàng nào.</div>
+    }

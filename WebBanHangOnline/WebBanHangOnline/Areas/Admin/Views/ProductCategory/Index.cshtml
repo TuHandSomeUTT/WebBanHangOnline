@@ -1,9 +1,10 @@
-﻿@model IEnumerable<WebBanHangOnline.Models.EF.ProductCategory>
+﻿@*@model IEnumerable<WebBanHangOnline.Models.EF.ProductCategory>*@
+@model PagedList.IPagedList<WebBanHangOnline.Models.EF.ProductCategory>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Danh Mục Sản Phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
 
 @section naviheader{
     <!-- Left navbar links -->
@@ -50,7 +51,15 @@
             </div>
         </div>
         <div class="card-body">
-            
+            <!--Search box-->
+            @using (Html.BeginForm("Index", "ProductCategory", FormMethod.Get))
+            {
+                <div class="form-inline mb-2">
+                    <input type="text" name="searchText" class="form-control mr-2" placeholder="Tìm danh mục..." value="@ViewBag.SearchText" />
+                    <button type="submit" class="btn btn-primary">Tìm Kiếm</button>
+                </div>
+            }
+
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -76,8 +85,8 @@
                                 <td>@item.Title</td>
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                 @*<td class="text-center">
-                                    <a href='#' data-id="@item.Id" class="btnActive">@Html.Raw(strCheck)</a>
-                                </td>*@
+                                        <a href='#' data-id="@item.Id" class="btnActive">@Html.Raw(strCheck)</a>
+                                    </td>*@
                                 <td>
                                     <a href="/admin/productcategory/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
                                     <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
@@ -95,12 +104,14 @@
                 </tbody>
             </table>
 
-            
+
 
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-
+            <div class="col-6 text-right">
+                @Html.PagedListPager(Model, pageNumber => Url.Action("Index", new { page = pageNumber, SearchText = ViewBag.SearchText }))
+            </div>
         </div>
         <!-- /.card-footer-->
     </div>

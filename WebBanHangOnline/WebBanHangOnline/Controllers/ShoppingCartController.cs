@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using WebBanHangOnline.Models;
@@ -181,96 +182,207 @@ namespace WebBanHangOnline.Controllers
             return PartialView();
         }
 
+        //[HttpPost]
+        //[AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult CheckOut(OrderViewModel req)
+        //{
+        //    var code = new { Success = false, Code = -1, Url = "" };
+        //    if (ModelState.IsValid)
+        //    {
+        //        ShoppingCart cart = (ShoppingCart)Session["Cart"];
+        //        if (cart != null)
+        //        {
+        //            Order order = new Order();
+        //            order.CustomerName = req.CustomerName;
+        //            order.Phone = req.Phone;
+        //            order.Address = req.Address;
+        //            order.Email = req.Email;
+        //            order.Status = 1; //1 là trạng thái chưa thanh toán, 2 là đã thanh toán, 3 là hoàn thành đơn (đã giao OK), 4 là hủy :)
+        //            cart.Items.ForEach(x => order.OrderDetails.Add(new OrderDetail
+        //            {
+        //                ProductId = x.ProductId,
+        //                Quantity = x.Quantity,
+        //                Price = x.Price,
+
+        //            }));
+        //            order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));
+        //            order.Quantity = cart.Items.Sum(x => x.Quantity); // ✅ Gán tổng số lượng sản phẩm (Bài học cột sống: không gán và order bị 0 sản phẩm :)))
+        //            order.TypePayment = req.TypePayment;
+        //            order.CreatedDate = DateTime.Now;
+        //            order.ModifiedDate = DateTime.Now;
+        //            order.CreatedBy = req.Phone;
+        //            if (User.Identity.IsAuthenticated)
+        //            order.CustomerId = User.Identity.GetUserId();
+        //            Random rd = new Random();
+        //            order.Code = "DH" + rd.Next(0,9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);
+        //            //order.Email = req.Email;
+        //            db.Orders.Add(order);
+        //            db.SaveChanges();
+
+        //            // code send mail cho KH
+        //            var strSanPham = "";
+        //            var thanhTien = decimal.Zero;
+        //            var tongTien = decimal.Zero;
+        //            foreach(var sp in cart.Items)
+        //            {
+        //                strSanPham += "<tr>";
+        //                strSanPham += "<td>"+sp.ProductName+"</td>";
+        //                strSanPham += "<td>"+sp.Quantity+"</td>";
+        //                strSanPham += "<td>"+WebBanHangOnline.Common.Common.FormatNumber(sp.TotalPrice)+"</td>";
+        //                strSanPham += "</tr>";
+        //                thanhTien += sp.Price * sp.Quantity;
+        //            }
+        //            tongTien = thanhTien;
+        //            string contentCustomer = System.IO.File.ReadAllText(Server.MapPath("~/Content/templates/send2.html"));
+        //            contentCustomer = contentCustomer.Replace("{{MaDon}}", order.Code);
+        //            contentCustomer = contentCustomer.Replace("{{SanPham}}", strSanPham);
+        //            contentCustomer = contentCustomer.Replace("{{NgayDat}}", DateTime.Now.ToString("dd/MM/yyyy"));
+        //            contentCustomer = contentCustomer.Replace("{{TenKhachHang}}", order.CustomerName);
+        //            contentCustomer = contentCustomer.Replace("{{Phone}}", order.Phone);
+        //            contentCustomer = contentCustomer.Replace("{{Email}}", req.Email);
+        //            contentCustomer = contentCustomer.Replace("{{DiaChiNhanHang}}", order.Address);
+        //            contentCustomer = contentCustomer.Replace("{{ThanhTien}}", WebBanHangOnline.Common.Common.FormatNumber(thanhTien, 0));
+        //            contentCustomer = contentCustomer.Replace("{{TongTien}}", WebBanHangOnline.Common.Common.FormatNumber(tongTien, 0));
+        //            WebBanHangOnline.Common.Common.SendMail("Gốm Sứ Bình Xuyên", "Đơn hàng #"+order.Code, contentCustomer.ToString(), req.Email);
+
+        //            string contentAdmin = System.IO.File.ReadAllText(Server.MapPath("~/Content/templates/send1.html"));
+        //            contentAdmin = contentAdmin.Replace("{{MaDon}}", order.Code);
+        //            contentAdmin = contentAdmin.Replace("{{SanPham}}", strSanPham);
+        //            contentAdmin = contentAdmin.Replace("{{NgayDat}}", DateTime.Now.ToString("dd/MM/yyyy"));
+        //            contentAdmin = contentAdmin.Replace("{{TenKhachHang}}", order.CustomerName);
+        //            contentAdmin = contentAdmin.Replace("{{Phone}}", order.Phone);
+        //            contentAdmin = contentAdmin.Replace("{{Email}}", req.Email);
+        //            contentAdmin = contentAdmin.Replace("{{DiaChiNhanHang}}", order.Address);
+        //            contentAdmin = contentAdmin.Replace("{{ThanhTien}}", WebBanHangOnline.Common.Common.FormatNumber(thanhTien, 0));
+        //            contentAdmin = contentAdmin.Replace("{{TongTien}}", WebBanHangOnline.Common.Common.FormatNumber(tongTien, 0));
+        //            WebBanHangOnline.Common.Common.SendMail("Gốm Sứ Bình Xuyên", "Đơn hàng mới #" + order.Code, contentAdmin.ToString(), ConfigurationManager.AppSettings["EmailAdmin"]);
+        //            cart.ClearCart();   
+        //            code = new { Success = true, Code = req.TypePayment, Url = "" };
+        //            //var url = "";
+        //            if (req.TypePayment == 2)
+        //            {
+        //                var url = UrlPayment(req.TypePaymentVN, order.Code);
+        //                code = new { Success = true, Code = req.TypePayment, Url = url };
+        //            }
+
+        //            //code = new { Success = true, code = 1, Url = url };
+        //            //return RedirectToAction("CheckOutSuccess");
+        //        }
+        //    }
+        //    return Json(code);
+        //}
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult CheckOut(OrderViewModel req)
         {
-            var code = new { Success = false, Code = -1, Url = "" };
-            if (ModelState.IsValid)
+            var result = new { Success = false, Code = -1, Url = "" };
+
+            if (!ModelState.IsValid)
+                return Json(result);
+
+            var cart = Session["Cart"] as ShoppingCart;
+            if (cart == null || cart.Items.Count == 0)
+                return Json(result);
+
+            var order = new Order
             {
-                ShoppingCart cart = (ShoppingCart)Session["Cart"];
-                if (cart != null)
+                CustomerName = req.CustomerName,
+                Phone = req.Phone,
+                Address = req.Address,
+                Email = req.Email,
+                Status = 1, // 1: Chưa thanh toán
+                CreatedDate = DateTime.Now,
+                ModifiedDate = DateTime.Now,
+                CreatedBy = req.Phone,
+                TypePayment = req.TypePayment,
+                Code = "DH" + new Random().Next(1000, 9999).ToString()
+            };
+
+            if (User.Identity.IsAuthenticated)
+                order.CustomerId = User.Identity.GetUserId(); // lấy id của khách hàng (người đang đăng nhập). Trong database (bảng AspNetUsers nếu ta xài ASP.NET Identity mặc định), thì mỗi user có một Id (kiểu string), ví dụ: d5aa4e21-3d90-4cdd-9bbf-3f83a32e490d
+            foreach (var item in cart.Items)
+            {
+                order.OrderDetails.Add(new OrderDetail
                 {
-                    Order order = new Order();
-                    order.CustomerName = req.CustomerName;
-                    order.Phone = req.Phone;
-                    order.Address = req.Address;
-                    order.Email = req.Email;
-                    order.Status = 1; //1 là trạng thái chưa thanh toán, 2 là đã thanh toán, 3 là hoàn thành đơn (đã giao OK), 4 là hủy :)
-                    cart.Items.ForEach(x => order.OrderDetails.Add(new OrderDetail
-                    {
-                        ProductId = x.ProductId,
-                        Quantity = x.Quantity,
-                        Price = x.Price,
-
-                    }));
-                    order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));
-                    order.Quantity = cart.Items.Sum(x => x.Quantity); // ✅ Gán tổng số lượng sản phẩm (Bài học cột sống: không gán và order bị 0 sản phẩm :)))
-                    order.TypePayment = req.TypePayment;
-                    order.CreatedDate = DateTime.Now;
-                    order.ModifiedDate = DateTime.Now;
-                    order.CreatedBy = req.Phone;
-                    if (User.Identity.IsAuthenticated)
-                    order.CustomerId = User.Identity.GetUserId();
-                    Random rd = new Random();
-                    order.Code = "DH" + rd.Next(0,9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);
-                    //order.Email = req.Email;
-                    db.Orders.Add(order);
-                    db.SaveChanges();
-
-                    // code send mail cho KH
-                    var strSanPham = "";
-                    var thanhTien = decimal.Zero;
-                    var tongTien = decimal.Zero;
-                    foreach(var sp in cart.Items)
-                    {
-                        strSanPham += "<tr>";
-                        strSanPham += "<td>"+sp.ProductName+"</td>";
-                        strSanPham += "<td>"+sp.Quantity+"</td>";
-                        strSanPham += "<td>"+WebBanHangOnline.Common.Common.FormatNumber(sp.TotalPrice)+"</td>";
-                        strSanPham += "</tr>";
-                        thanhTien += sp.Price * sp.Quantity;
-                    }
-                    tongTien = thanhTien;
-                    string contentCustomer = System.IO.File.ReadAllText(Server.MapPath("~/Content/templates/send2.html"));
-                    contentCustomer = contentCustomer.Replace("{{MaDon}}", order.Code);
-                    contentCustomer = contentCustomer.Replace("{{SanPham}}", strSanPham);
-                    contentCustomer = contentCustomer.Replace("{{NgayDat}}", DateTime.Now.ToString("dd/MM/yyyy"));
-                    contentCustomer = contentCustomer.Replace("{{TenKhachHang}}", order.CustomerName);
-                    contentCustomer = contentCustomer.Replace("{{Phone}}", order.Phone);
-                    contentCustomer = contentCustomer.Replace("{{Email}}", req.Email);
-                    contentCustomer = contentCustomer.Replace("{{DiaChiNhanHang}}", order.Address);
-                    contentCustomer = contentCustomer.Replace("{{ThanhTien}}", WebBanHangOnline.Common.Common.FormatNumber(thanhTien, 0));
-                    contentCustomer = contentCustomer.Replace("{{TongTien}}", WebBanHangOnline.Common.Common.FormatNumber(tongTien, 0));
-                    WebBanHangOnline.Common.Common.SendMail("Gốm Sứ Bình Xuyên", "Đơn hàng #"+order.Code, contentCustomer.ToString(), req.Email);
-
-                    string contentAdmin = System.IO.File.ReadAllText(Server.MapPath("~/Content/templates/send1.html"));
-                    contentAdmin = contentAdmin.Replace("{{MaDon}}", order.Code);
-                    contentAdmin = contentAdmin.Replace("{{SanPham}}", strSanPham);
-                    contentAdmin = contentAdmin.Replace("{{NgayDat}}", DateTime.Now.ToString("dd/MM/yyyy"));
-                    contentAdmin = contentAdmin.Replace("{{TenKhachHang}}", order.CustomerName);
-                    contentAdmin = contentAdmin.Replace("{{Phone}}", order.Phone);
-                    contentAdmin = contentAdmin.Replace("{{Email}}", req.Email);
-                    contentAdmin = contentAdmin.Replace("{{DiaChiNhanHang}}", order.Address);
-                    contentAdmin = contentAdmin.Replace("{{ThanhTien}}", WebBanHangOnline.Common.Common.FormatNumber(thanhTien, 0));
-                    contentAdmin = contentAdmin.Replace("{{TongTien}}", WebBanHangOnline.Common.Common.FormatNumber(tongTien, 0));
-                    WebBanHangOnline.Common.Common.SendMail("Gốm Sứ Bình Xuyên", "Đơn hàng mới #" + order.Code, contentAdmin.ToString(), ConfigurationManager.AppSettings["EmailAdmin"]);
-                    cart.ClearCart();   
-                    code = new { Success = true, Code = req.TypePayment, Url = "" };
-                    //var url = "";
-                    if (req.TypePayment == 2)
-                    {
-                        var url = UrlPayment(req.TypePaymentVN, order.Code);
-                        code = new { Success = true, Code = req.TypePayment, Url = url };
-                    }
-
-                    //code = new { Success = true, code = 1, Url = url };
-                    //return RedirectToAction("CheckOutSuccess");
-                }
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
+                    Price = item.Price
+                });
             }
-            return Json(code);
+
+            order.TotalAmount = cart.Items.Sum(x => x.Price * x.Quantity);
+            order.Quantity = cart.Items.Sum(x => x.Quantity);
+
+            db.Orders.Add(order);
+            db.SaveChanges();
+
+            // Email nội dung sản phẩm
+            var strSanPham = new StringBuilder();
+            decimal thanhTien = 0;
+
+            foreach (var item in cart.Items)
+            {
+                strSanPham.Append("<tr>");
+                strSanPham.AppendFormat("<td>{0}</td>", item.ProductName);
+                strSanPham.AppendFormat("<td>{0}</td>", item.Quantity);
+                strSanPham.AppendFormat("<td>{0}</td>", WebBanHangOnline.Common.Common.FormatNumber(item.TotalPrice));
+                strSanPham.Append("</tr>");
+                thanhTien += item.Price * item.Quantity;
+            }
+
+            var tongTien = thanhTien;
+
+            // Gửi mail cho KH
+            string contentCustomer = System.IO.File.ReadAllText(Server.MapPath("~/Content/templates/send2.html"));
+            contentCustomer = contentCustomer
+                .Replace("{{MaDon}}", order.Code)
+                .Replace("{{SanPham}}", strSanPham.ToString())
+                .Replace("{{NgayDat}}", DateTime.Now.ToString("dd/MM/yyyy"))
+                .Replace("{{TenKhachHang}}", order.CustomerName)
+                .Replace("{{Phone}}", order.Phone)
+                .Replace("{{Email}}", req.Email)
+                .Replace("{{DiaChiNhanHang}}", order.Address)
+                .Replace("{{ThanhTien}}", WebBanHangOnline.Common.Common.FormatNumber(thanhTien, 0))
+                .Replace("{{TongTien}}", WebBanHangOnline.Common.Common.FormatNumber(tongTien, 0));
+
+            WebBanHangOnline.Common.Common.SendMail("Gốm Sứ Bình Xuyên", $"Đơn hàng #{order.Code}", contentCustomer, req.Email);
+
+            // Gửi mail cho Admin
+            string contentAdmin = System.IO.File.ReadAllText(Server.MapPath("~/Content/templates/send1.html"));
+            contentAdmin = contentAdmin
+                .Replace("{{MaDon}}", order.Code)
+                .Replace("{{SanPham}}", strSanPham.ToString())
+                .Replace("{{NgayDat}}", DateTime.Now.ToString("dd/MM/yyyy"))
+                .Replace("{{TenKhachHang}}", order.CustomerName)
+                .Replace("{{Phone}}", order.Phone)
+                .Replace("{{Email}}", req.Email)
+                .Replace("{{DiaChiNhanHang}}", order.Address)
+                .Replace("{{ThanhTien}}", WebBanHangOnline.Common.Common.FormatNumber(thanhTien, 0))
+                .Replace("{{TongTien}}", WebBanHangOnline.Common.Common.FormatNumber(tongTien, 0));
+
+            WebBanHangOnline.Common.Common.SendMail("Gốm Sứ Bình Xuyên", $"Đơn hàng mới #{order.Code}", contentAdmin, ConfigurationManager.AppSettings["EmailAdmin"]);
+
+            // Xóa giỏ hàng
+            cart.ClearCart();
+
+            // Nếu thanh toán online
+            if (req.TypePayment == 2)
+            {
+                var url = UrlPayment(req.TypePaymentVN, order.Code);
+                result = new { Success = true, Code = req.TypePayment, Url = url };
+            }
+            else
+            {
+                result = new { Success = true, Code = req.TypePayment, Url = "" };
+            }
+
+            return Json(result);
         }
+
+
         [AllowAnonymous]
         [HttpPost]
         public ActionResult AddToCart(int id, int quantity)

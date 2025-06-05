@@ -83,6 +83,13 @@ namespace WebBanHangOnline
            );
 
             routes.MapRoute(
+               name: "AdvList",
+               url: "quang-cao",
+               defaults: new { controller = "Adv", action = "Index", alias = UrlParameter.Optional },
+               namespaces: new[] { "WebBanHangOnline.Controllers" }
+           );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },

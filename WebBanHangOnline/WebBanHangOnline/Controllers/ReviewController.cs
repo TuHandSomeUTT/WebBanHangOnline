@@ -41,19 +41,19 @@ namespace WebBanHangOnline.Controllers
             return PartialView();
         }
 
-        public ActionResult LichSuDonHang()
-        {
-            if (User.Identity.IsAuthenticated)
-            {
-                var userStore = new UserStore<ApplicationUser>(new ApplicationDbContext());
-                var userManager = new UserManager<ApplicationUser>(userStore);
-                var user = userManager.FindByName(User.Identity.Name);
-                var items = _db.Orders.Where(x => x.CustomerId == user.Id).ToList();
-                return PartialView(items);
-            }
+        //public ActionResult LichSuDonHang() đã chuyển sang CustomerController
+        //{
+        //    if (User.Identity.IsAuthenticated)
+        //    {
+        //        var userStore = new UserStore<ApplicationUser>(new ApplicationDbContext());
+        //        var userManager = new UserManager<ApplicationUser>(userStore);
+        //        var user = userManager.FindByName(User.Identity.Name);
+        //        var items = _db.Orders.Where(x => x.CustomerId == user.Id).ToList();
+        //        return PartialView(items);
+        //    }
 
-            return PartialView();
-        }
+        //    return PartialView();
+        //}
 
         [AllowAnonymous]
         public ActionResult _Load_Review(int productId)
@@ -63,10 +63,15 @@ namespace WebBanHangOnline.Controllers
             return PartialView(item);
         }
 
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpPost]
         public ActionResult PostReview(ReviewProduct req)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Json(new { Success = false, Message = "Bạn cần đăng nhập để đánh giá." });
+            }
+
             if (ModelState.IsValid)
             {
                 req.CreatedDate = DateTime.Now;
@@ -74,7 +79,7 @@ namespace WebBanHangOnline.Controllers
                 _db.SaveChanges();
                 return Json(new { Success = true });
             }
-            return Json(new { Success = false });
+            return Json(new { Success = false, Message = "Dữ liệu không hợp lệ." });
         }
 
         protected override void Dispose(bool disposing)

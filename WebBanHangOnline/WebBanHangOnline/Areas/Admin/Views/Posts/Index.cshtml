@@ -1,4 +1,7 @@
-﻿﻿@model IEnumerable<WebBanHangOnline.Models.EF.Posts>
+﻿@*﻿@model IEnumerable<WebBanHangOnline.Models.EF.Posts>*@
+@model PagedList.IPagedList<WebBanHangOnline.Models.EF.Posts>
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = "Bài viết";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -49,6 +52,21 @@
             </div>
         </div>
         <div class="card-body">
+            <!--Thanh search nè-->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    @using (Html.BeginForm("Index", "Posts", FormMethod.Get))
+                    {
+                        <div class="input-group">
+                            <input type="text" name="searchText" class="form-control" placeholder="Tìm tiêu đề bài viết..." value="@ViewBag.SearchText" />
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Tìm Kiếm</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
             <table class="table table-hover text-center">
                 <thead>
                     <tr>
@@ -65,7 +83,7 @@
                 <tbody>
                     @if (Model != null && Model.Any())
                     {
-                        var i = 1;
+                        var i = (ViewBag.Page - 1) * ViewBag.PageSize + 1;
                         foreach (var item in Model)
                         {
                             var strCheck = item.IsActive ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
@@ -97,8 +115,8 @@
 
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-
+        <div class="card-footer clearfix text-center">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchText = ViewBag.SearchText }))
         </div>
         <!-- /.card-footer-->
     </div>

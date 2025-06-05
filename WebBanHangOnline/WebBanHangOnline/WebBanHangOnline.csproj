@@ -209,6 +209,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -303,6 +304,10 @@
     <Compile Include="Migrations\202505211522318_addTableWishList.cs" />
     <Compile Include="Migrations\202505211522318_addTableWishList.Designer.cs">
       <DependentUpon>202505211522318_addTableWishList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202506051344444_addIsActiveAdv05062025.cs" />
+    <Compile Include="Migrations\202506051344444_addIsActiveAdv05062025.Designer.cs">
+      <DependentUpon>202506051344444_addIsActiveAdv05062025.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3561,6 +3566,10 @@
     <Content Include="Content\assets\plugins\moment\locales.min.js.map" />
     <Content Include="Content\assets\plugins\moment\moment-with-locales.min.js.map" />
     <Content Include="Content\assets\plugins\moment\moment.min.js.map" />
+    <Content Include="Areas\Admin\Views\Account\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Adv\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Adv\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Adv\Edit.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -3655,11 +3664,13 @@
     <Content Include="Views\Review\_Review.cshtml" />
     <Content Include="Views\Review\_Load_Review.cshtml" />
     <Content Include="Views\WishList\Index.cshtml" />
+    <Content Include="Views\Review\LichSuDonHang.cshtml" />
+    <Content Include="Views\Customer\OrderHistory.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Adv\" />
     <Folder Include="Content\ckfinder\userfiles\" />
     <Folder Include="Uploads\_thumbs\Images\" />
   </ItemGroup>
@@ -3753,6 +3764,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505211522318_addTableWishList.resx">
       <DependentUpon>202505211522318_addTableWishList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202506051344444_addIsActiveAdv05062025.resx">
+      <DependentUpon>202506051344444_addIsActiveAdv05062025.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

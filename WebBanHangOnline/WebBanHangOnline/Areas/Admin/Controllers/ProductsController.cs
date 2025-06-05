@@ -14,73 +14,42 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Admin/Products
-        public ActionResult Index(int? page)
-        {
-            IEnumerable<Product> items = db.Products.OrderByDescending(x => x.Id);
-            var pageSize = 5;
-            if (page == null)
-            {
-                page = 1;
-            }
-            var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
-            items = items.ToPagedList(pageIndex, pageSize);
-            ViewBag.PageSize = pageSize;
-            ViewBag.Page = page;
-            return View(items);
-        }
-
-        //public ActionResult Add()
+        //public ActionResult Index(int? page)
         //{
-        //    ViewBag.ProductCategory = new SelectList(db.ProductCategories.ToList(), "Id", "Title");
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Add(Product model, List<string> Images, List<int> rDefault)
-        //{
-        //    if (ModelState.IsValid)
+        //    IEnumerable<Product> items = db.Products.OrderByDescending(x => x.Id);
+        //    var pageSize = 5;
+        //    if (page == null)
         //    {
-        //        if (Images != null && Images.Count > 0)
-        //        {
-        //            for (int i = 0; i < Images.Count; i++)
-        //            {
-        //                if (i + 1 == rDefault[0])
-        //                {
-        //                    model.Image = Images[i];
-        //                    model.ProductImage.Add(new ProductImage
-        //                    {
-        //                        ProductId = model.Id,
-        //                        Image = Images[i],
-        //                        IsDefault = true
-        //                    });
-        //                }
-        //                else
-        //                {
-        //                    model.ProductImage.Add(new ProductImage
-        //                    {
-        //                        ProductId = model.Id,
-        //                        Image = Images[i],
-        //                        IsDefault = false
-        //                    });
-        //                }
-        //            }
-        //        }
-        //        model.CreatedDate = DateTime.Now;
-        //        model.ModifiedDate = DateTime.Now;
-        //        if (string.IsNullOrEmpty(model.SeoTitle))
-        //        {
-        //            model.SeoTitle = model.Title;
-        //        }
-        //        if (string.IsNullOrEmpty(model.Alias))
-        //            model.Alias = WebBanHangOnline.Models.Common.Filter.FilterChar(model.Title);
-        //        db.Products.Add(model);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
+        //        page = 1;
         //    }
-        //    ViewBag.ProductCategory = new SelectList(db.ProductCategories.ToList(), "Id", "Title");
-        //    return View(model);
+        //    var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+        //    items = items.ToPagedList(pageIndex, pageSize);
+        //    ViewBag.PageSize = pageSize;
+        //    ViewBag.Page = page;
+        //    return View(items);
         //}
+        public ActionResult Index(string searchText, int? page)
+        {
+            var pageSize = 5;
+            var pageIndex = page.HasValue ? page.Value : 1;
+
+            // ToList() để có thể dùng ToLower safely
+            IEnumerable<Product> items = db.Products.ToList().OrderByDescending(x => x.Id);
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                searchText = searchText.ToLower();
+                items = items.Where(x => x.Title != null && x.Title.ToLower().Contains(searchText));
+            }
+
+            var pagedItems = items.ToPagedList(pageIndex, pageSize);
+
+            ViewBag.PageSize = pageSize;
+            ViewBag.Page = pageIndex;
+            ViewBag.SearchText = searchText;
+
+            return View(pagedItems);
+        }
 
         public ActionResult Add()
         {
@@ -94,49 +63,46 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Gán ảnh đại diện cho sản phẩm (ảnh được chọn làm default)
-                if (Images != null && Images.Count > 0 && rDefault != null && rDefault.Count > 0)
+                if (Images != null && Images.Count > 0)
                 {
-                    int defaultIndex = rDefault[0] - 1;
-                    if (defaultIndex >= 0 && defaultIndex < Images.Count)
-                    {
-                        model.Image = Images[defaultIndex];
-                    }
-
                     for (int i = 0; i < Images.Count; i++)
                     {
-                        bool isDefault = (i == defaultIndex);
-                        model.ProductImage.Add(new ProductImage
+                        if (i + 1 == rDefault[0])
                         {
-                            Image = Images[i],
-                            IsDefault = isDefault
-                        });
+                            model.Image = Images[i];
+                            model.ProductImage.Add(new ProductImage
+                            {
+                                ProductId = model.Id,
+                                Image = Images[i],
+                                IsDefault = true
+                            });
+                        }
+                        else
+                        {
+                            model.ProductImage.Add(new ProductImage
+                            {
+                                ProductId = model.Id,
+                                Image = Images[i],
+                                IsDefault = false
+                            });
+                        }
                     }
                 }
-
                 model.CreatedDate = DateTime.Now;
                 model.ModifiedDate = DateTime.Now;
-
                 if (string.IsNullOrEmpty(model.SeoTitle))
                 {
                     model.SeoTitle = model.Title;
                 }
-
                 if (string.IsNullOrEmpty(model.Alias))
-                {
                     model.Alias = WebBanHangOnline.Models.Common.Filter.FilterChar(model.Title);
-                }
-
-                db.Products.Add(model); // Lúc này EF sẽ tự liên kết các ProductImage theo ID của model sau khi SaveChanges
+                db.Products.Add(model);
                 db.SaveChanges();
-
                 return RedirectToAction("Index");
             }
-
             ViewBag.ProductCategory = new SelectList(db.ProductCategories.ToList(), "Id", "Title");
             return View(model);
         }
-
 
         public ActionResult Edit(int id)
         {
@@ -145,44 +111,73 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
             return View(item);
         }
 
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit(Product model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        model.ModifiedDate = DateTime.Now;
+        //        model.Alias = WebBanHangOnline.Models.Common.Filter.FilterChar(model.Title);
+        //        db.Products.Attach(model);
+        //        db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(model);
+        //}
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Product model)
         {
             if (ModelState.IsValid)
             {
+                // Lấy lại bản ghi cũ để giữ ảnh nếu không thay đổi
+                var oldData = db.Products.AsNoTracking().FirstOrDefault(x => x.Id == model.Id);
+                if (oldData == null)
+                    return HttpNotFound();
+
+                // Nếu ảnh bị null (vì form không truyền lên), thì giữ lại ảnh cũ
+                if (string.IsNullOrEmpty(model.Image))
+                {
+                    model.Image = oldData.Image;
+                }
+
                 model.ModifiedDate = DateTime.Now;
                 model.Alias = WebBanHangOnline.Models.Common.Filter.FilterChar(model.Title);
+
                 db.Products.Attach(model);
                 db.Entry(model).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(model);
         }
+
 
         [HttpPost]
         public ActionResult Delete(int id)
         {
             var item = db.Products.Find(id);
-            if (item != null)
+            if (item == null)
             {
-                var checkImg = item.ProductImage.Where(x => x.ProductId == item.Id);
-                if (checkImg != null)
-                {
-                    foreach (var img in checkImg)
-                    {
-                        db.ProductImages.Remove(img);
-                        db.SaveChanges();
-                    }
-                }
-                db.Products.Remove(item);
-                db.SaveChanges();
-                return Json(new { success = true });
+                return Json(new { success = false });
             }
 
-            return Json(new { success = false });
+            var images = db.ProductImages.Where(x => x.ProductId == item.Id).ToList();
+            if (images.Any())
+            {
+                db.ProductImages.RemoveRange(images);
+            }
+
+            db.Products.Remove(item);
+            db.SaveChanges();
+
+            return Json(new { success = true });
         }
+
 
         [HttpPost]
         public ActionResult IsActive(int id)

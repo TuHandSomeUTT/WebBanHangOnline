@@ -22,6 +22,7 @@ namespace WebBanHangOnline.Models.EF
         public string Image {  get; set; }
         [StringLength(500)]
         public string Link { get; set; }
+        public bool IsActive { get; set; }
         public string Type { get; set; }
     }
 }

@@ -14,18 +14,45 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
 
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Admin/Order
-        public ActionResult Index(int? page)
-        {
-            var items = db.Orders.OrderByDescending(x=>x.CreatedDate).ToList();
+        //public ActionResult Index(int? page)
+        //{
+        //    var items = db.Orders.OrderByDescending(x=>x.CreatedDate).ToList();
 
-            if (page == null)
+        //    if (page == null)
+        //    {
+        //        page = 1;
+        //    }
+        //    var pageNumber = page ?? 1;
+        //    var pageSize = 10;
+        //    ViewBag.PageSize = pageSize;
+        //    ViewBag.Page = pageNumber;
+        //    return View(items.ToPagedList(pageNumber, pageSize));
+        //}
+        public ActionResult Index(string searchText, int? page)
+        {
+            var items = db.Orders.AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchText))
             {
-                page = 1;
+                searchText = searchText.ToLower();
+                items = items.Where(x =>
+                    x.Code.ToLower().Contains(searchText) ||
+                    x.CustomerName.ToLower().Contains(searchText) ||
+                    x.Phone.ToLower().Contains(searchText) ||
+                    x.Email.ToLower().Contains(searchText) ||
+                    x.Address.ToLower().Contains(searchText)
+                );
             }
-            var pageNumber = page ?? 1;
+
+            items = items.OrderByDescending(x => x.CreatedDate);
+
             var pageSize = 10;
+            var pageNumber = page ?? 1;
+
             ViewBag.PageSize = pageSize;
             ViewBag.Page = pageNumber;
+            ViewBag.SearchText = searchText;
+
             return View(items.ToPagedList(pageNumber, pageSize));
         }
 

@@ -49,15 +49,15 @@
                         var i = 1;
                         foreach (var item in Model)
                         {
-                            <tr>
+                            <tr id="trow_@item.Id">
                                 <td>@i</td>
                                 <td>@item.UserName</td>
                                 <td>@item.Fullname</td>
                                 <td>@item.Email</td>
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                 <td>
-                                    <a href="/admin/account/edit/@item.UserName" class="btn btn-sm btn-primary">Sửa</a>
-                                    <a href="#" data-user="@item.UserName" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                    <a href="/admin/account/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                    <a href="#" data-user="@item.UserName" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
                                 </td>
                             </tr>
                             i++;
@@ -75,4 +75,37 @@
     <!-- /.card -->
 
 </section>
+
 <!-- /.content -->
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('.btnDelete').click(function () {
+                var user = $(this).data('user');
+                var id = $(this).data('id');
+
+                // Thêm alert xác nhận trước khi xóa
+                if (!confirm("Bạn có chắc chắn muốn xóa tài khoản '" + user + "' không?")) {
+                    return; // Cancel xóa
+                }
+
+                $.ajax({
+                    url: '/admin/account/DeleteAccount',
+                    type: 'POST',
+                    data: { user: user, id: id },
+                    success: function (res) {
+                        if (res.Success) {
+                            $('#trow_' + id).remove();
+                            alert("Đã xóa thành công!");
+                        } else {
+                            alert("Xóa thất bại!");
+                        }
+                    },
+                    error: function () {
+                        alert("Có lỗi xảy ra khi xóa!");
+                    }
+                });
+            });
+        });
+    </script>
+}

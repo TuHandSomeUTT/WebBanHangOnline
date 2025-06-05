@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" data-id="@item.Id" class="btn btn-danger">Xóa</a>
+                    <a href="javascript:void(0);" data-id="@item.Id" class="btn btn-danger btn-delete-wishlist">Xóa</a>
                 </div>
             </div>
         }
@@ -65,3 +65,34 @@
     }
 
 </div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.btn-delete-wishlist').click(function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = btn.data('id');
+
+                if (confirm("Bạn có chắc muốn xóa sản phẩm này khỏi danh sách yêu thích?")) {
+                    $.ajax({
+                        url: '@Url.Action("DeleteFromWishlist", "Wishlist")',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (res) {
+                            if (res.Success) {
+                                btn.closest('.row-item-new').remove(); // Xóa khỏi view
+                                alert(res.Message);
+                            } else {
+                                alert(res.Message);
+                            }
+                        },
+                        error: function () {
+                            alert("Có lỗi xảy ra, vui lòng thử lại.");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

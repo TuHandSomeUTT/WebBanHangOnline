@@ -1,0 +1,104 @@
+﻿@model WebBanHangOnline.Models.EF.Adv
+
+@{
+    ViewBag.Title = "Chỉnh Sửa Quảng Cáo";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader {
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a></li>
+        <li class="nav-item d-none d-sm-inline-block"><a href="/admin" class="nav-link">Trang Chủ</a></li>
+        <li class="nav-item d-none d-sm-inline-block"><a href="/admin/adv" class="nav-link">Quảng Cáo</a></li>
+        <li class="nav-item d-none d-sm-inline-block"><a href="#" class="nav-link">Chỉnh Sửa</a></li>
+    </ul>
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6"><h1>Chỉnh Sửa Quảng Cáo</h1></div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Quảng Cáo</a></li>
+                    <li class="breadcrumb-item active">Chỉnh Sửa</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="card">
+        <div class="card-header"><h3 class="card-title">Thông Tin Quảng Cáo</h3></div>
+        <div class="card-body">
+            <div class="bs-stepper-content">
+                @using (Html.BeginForm("Edit", "Adv", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(x => x.Id) <!-- GIỮ LẠI ID KHI SUBMIT -->
+                    @Html.ValidationSummary(true)
+
+                    <div class="form-group">
+                        <label>Tiêu Đề</label>
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control", placeholder = "Tiêu đề quảng cáo" })
+                        @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mô Tả</label>
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", rows = 3 })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ảnh Đại Diện</label>
+                        <div class="input-group">
+                            @Html.TextBoxFor(x => x.Image, new { @id = "txtImage", @class = "form-control", placeholder = "Đường dẫn ảnh" })
+                            <div class="input-group-append">
+                                <input type="button" class="btn btn-info" value="Tải Ảnh" onclick="BrowseServer('txtImage');" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Link Chuyển Hướng</label>
+                        @Html.TextBoxFor(x => x.Link, new { @class = "form-control", placeholder = "https://..." })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loại Quảng Cáo</label>
+                        @Html.TextBoxFor(x => x.Type, new { @class = "form-control", placeholder = "Ví dụ: slide, banner, sidebar..." })
+                    </div>
+
+                    <div class="form-group form-check">
+                        @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input", @id = "IsActiveCheckbox" })
+                        <label class="form-check-label" for="IsActiveCheckbox">Hiển Thị</label>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Cập Nhật</button>
+                        <a href="/admin/adv" class="btn btn-danger">Quay Lại</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            CKEDITOR.replace('txtDetail', {
+                customConfig: '/content/ckeditor/config.js',
+                extraAllowedContent: 'span',
+            });
+        });
+        function BrowseServer(field) {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                document.getElementById(field).value = fileUrl;
+            };
+            finder.popup();
+        }
+    </script>
+}
