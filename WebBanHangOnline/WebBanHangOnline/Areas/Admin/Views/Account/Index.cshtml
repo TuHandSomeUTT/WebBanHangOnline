@@ -1,4 +1,6 @@
-﻿@model IEnumerable<WebBanHangOnline.Models.ApplicationUser>
+﻿@*@model IEnumerable<WebBanHangOnline.Models.ApplicationUser>*@
+@model PagedList.IPagedList<WebBanHangOnline.Models.ApplicationUser>
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Quản Lý Tài Khoản";
 }
@@ -32,6 +34,12 @@
             </div>
         </div>
         <div class="card-body">
+            <!--Search box-->
+            <form method="get" action="/admin/account" class="form-inline mb-3">
+                <input type="text" name="searchText" value="@ViewBag.SearchText" class="form-control mr-2" placeholder="Tìm theo tên, email, sđt..." style="width: 300px;" />
+                <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+            </form>
+
             <table class="table table-bordered text-center">
                 <thead>
                     <tr>
@@ -68,7 +76,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchText = ViewBag.SearchText }))
         </div>
         <!-- /.card-footer-->
     </div>

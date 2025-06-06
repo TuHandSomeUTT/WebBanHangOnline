@@ -96,7 +96,6 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", "Có lỗi xảy ra: " + ex.Message);
             }
-
             return View(model);
         }
 

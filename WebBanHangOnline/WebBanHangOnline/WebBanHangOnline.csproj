@@ -309,6 +309,10 @@
     <Compile Include="Migrations\202506051344444_addIsActiveAdv05062025.Designer.cs">
       <DependentUpon>202506051344444_addIsActiveAdv05062025.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202506060352179_updateAdvStringLength.cs" />
+    <Compile Include="Migrations\202506060352179_updateAdvStringLength.Designer.cs">
+      <DependentUpon>202506060352179_updateAdvStringLength.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\Filter.cs" />
@@ -3767,6 +3771,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202506051344444_addIsActiveAdv05062025.resx">
       <DependentUpon>202506051344444_addIsActiveAdv05062025.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202506060352179_updateAdvStringLength.resx">
+      <DependentUpon>202506060352179_updateAdvStringLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

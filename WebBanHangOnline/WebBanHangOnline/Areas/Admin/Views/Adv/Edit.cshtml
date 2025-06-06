@@ -47,7 +47,8 @@
 
                     <div class="form-group">
                         <label>Mô Tả</label>
-                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", rows = 3 })
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @id = "DescriptionEditor", rows = 3 })
+                        @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
@@ -88,11 +89,12 @@
 @section scripts{
     <script>
         $(document).ready(function () {
-            CKEDITOR.replace('txtDetail', {
+            CKEDITOR.replace('DescriptionEditor', {
                 customConfig: '/content/ckeditor/config.js',
                 extraAllowedContent: 'span',
             });
         });
+
         function BrowseServer(field) {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {

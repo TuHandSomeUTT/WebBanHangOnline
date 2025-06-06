@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using WebBanHangOnline.Models;
+using PagedList;
 
 namespace WebBanHangOnline.Areas.Admin.Controllers
 {
@@ -52,10 +53,36 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
             }
         }
         // GET: Admin/Account
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    var items = db.Users.ToList();
+        //    return View(items);
+        //}
+        public ActionResult Index(string searchText, int? page)
         {
-            var items = db.Users.ToList();
-            return View(items);
+            var items = db.Users.AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                searchText = searchText.ToLower();
+                items = items.Where(u =>
+                    u.UserName.ToLower().Contains(searchText) ||
+                    u.Fullname.ToLower().Contains(searchText) ||
+                    u.Email.ToLower().Contains(searchText) ||
+                    u.Phone.ToLower().Contains(searchText)
+                );
+            }
+
+            items = items.OrderByDescending(u => u.CreatedDate); // Hoặc sửa theo trường phù hợp
+
+            int pageSize = 10;
+            int pageNumber = page ?? 1;
+
+            ViewBag.PageSize = pageSize;
+            ViewBag.Page = pageNumber;
+            ViewBag.SearchText = searchText;
+
+            return View(items.ToPagedList(pageNumber, pageSize));
         }
 
         //
