@@ -252,6 +252,7 @@
 <!-- /.content -->
 
 @section scripts{
+    <script src="~/Scripts/jsConvert.js"></script>
     <script>
         $(document).ready(function () {
             $('.auto').autoNumeric('init');
@@ -301,18 +302,18 @@
             var str = "";
             if (currentId == 1) {
                 str += `<tr id="trow_${currentId}">
-                                <td class="text-center">${currentId}</td>
-                                <td class="text-center"><img src="${url}" width="80" /> <input type='hidden' value="${url}" name="Images"/> </td>
-                                <td class="text-center"><input type="radio" value="${currentId}" name="rDefault" checked="checked"/></td>
-                                <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnXoaAnh">Xóa</a></td>
-                           </tr>`;
+                                    <td class="text-center">${currentId}</td>
+                                    <td class="text-center"><img src="${url}" width="80" /> <input type='hidden' value="${url}" name="Images"/> </td>
+                                    <td class="text-center"><input type="radio" value="${currentId}" name="rDefault" checked="checked"/></td>
+                                    <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnXoaAnh">Xóa</a></td>
+                               </tr>`;
             } else {
                 str += `<tr id="trow_${currentId}">
-                                <td class="text-center">${currentId}</td>
-                                <td class="text-center"><img src="${url}" width="80" /> <input type='hidden' value="${url}" name="Images"/> </td>
-                                <td class="text-center"><input type="radio" name="rDefault" value="${currentId}"/></td>
-                                <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnXoaAnh">Xóa</a></td>
-                            </tr>`;
+                                    <td class="text-center">${currentId}</td>
+                                    <td class="text-center"><img src="${url}" width="80" /> <input type='hidden' value="${url}" name="Images"/> </td>
+                                    <td class="text-center"><input type="radio" name="rDefault" value="${currentId}"/></td>
+                                    <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnXoaAnh">Xóa</a></td>
+                                </tr>`;
             }
             $('#tbHtml').append(str);
             $('#tCurrentId').val(currentId);

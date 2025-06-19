@@ -183,7 +183,14 @@
                                                     }
                                                 </div>
                                             </div>
-                                            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
+                                            @*<div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>*@
+                                            <div class="red_button add_to_cart_button">
+                                                <a href="#"
+                                                   class="btnAddToCart"
+                                                   data-id="@item.Id"
+                                                   data-quantity="@item.Quantity">add to cart</a>
+                                            </div>
+
                                         </div>
                                     }
                                 }
@@ -230,6 +237,6 @@
     </div>
 </div>
 
-@section scripts{
+@section scripts {
     <script src="~/Content/assets/js/categories_custom.js"></script>
 }

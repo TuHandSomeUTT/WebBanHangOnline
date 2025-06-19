@@ -47,12 +47,28 @@ namespace WebBanHangOnline
                namespaces: new[] { "WebBanHangOnline.Controllers" }
            );
 
+            //    routes.MapRoute(
+            //    name: "BaiViet",
+            //    url: "post/{alias}",
+            //    defaults: new { controller = "Article", action = "Index", alias = UrlParameter.Optional },
+            //    namespaces: new[] { "WebBanHangOnline.Controllers" }
+            //);
+
+            // Chi tiết bài viết: alias-postid (ví dụ: khuyen-mai-thang-6-post123)
             routes.MapRoute(
-            name: "BaiViet",
-            url: "post/{alias}",
-            defaults: new { controller = "Article", action = "Index", alias = UrlParameter.Optional },
-            namespaces: new[] { "WebBanHangOnline.Controllers" }
-        );
+                name: "DetailPost",
+                url: "{alias}-post{id}",
+                defaults: new { controller = "Article", action = "Detail", id = UrlParameter.Optional },
+                namespaces: new[] { "WebBanHangOnline.Controllers" }
+            );
+
+            // Danh sách bài viết
+            routes.MapRoute(
+                name: "PostList",
+                url: "bai-viet",
+                defaults: new { controller = "Article", action = "Index", alias = UrlParameter.Optional },
+                namespaces: new[] { "WebBanHangOnline.Controllers" }
+            );
 
             routes.MapRoute(
                name: "detailProduct",

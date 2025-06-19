@@ -79,6 +79,7 @@ function DeleteAll() {
         success: function (rs) {
             if (rs.Success) {
                 LoadCart();
+                ShowCount();
             }
         }
     });

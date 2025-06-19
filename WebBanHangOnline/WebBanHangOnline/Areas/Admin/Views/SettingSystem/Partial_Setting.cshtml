@@ -11,7 +11,7 @@
             $('#load_page').html('Đang lưu...');
         }
         function OnSuccess(rs) {
-            $('#load_page').html('');
+            location.reload(); // <<< Cho nó reload lại luôn cho chắc
         }
         function OnFailure(rs) {
 

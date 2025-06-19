@@ -1,22 +1,25 @@
-﻿﻿@model WebBanHangOnline.Models.EF.Posts
+﻿@model PagedList.PagedList<WebBanHangOnline.Models.EF.Posts>
+@using PagedList.Mvc;
+@using PagedList;
 @{
-    ViewBag.Title = "Chi tiết bài viết";
+    ViewBag.Title = "Danh Sách Bài Viết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- CSS-->
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
-<!-- Slider -->
 <style>
     .news_section_container {
         margin-top: 180px;
     }
 
-    .row-item-new {
-        margin-bottom: 20px;
+    .row-item-news {
+        margin-bottom: 10px;
     }
 
     .title-news {
         font-size: 24px;
         border-bottom: 1px solid;
-        padding: 15px 0;
+        padding: 15px 0px;
         margin-bottom: 25px;
     }
 
@@ -25,22 +28,42 @@
         max-height: 100%;
     }
 </style>
+<!-- End CSS-->
 <div class="container news_section_container">
-    @if (Model != null)
-    {
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="title-news"> @Model.Title</h1>
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="title-news">Trang Thông Tin Khuyến Mãi Của Gốm Sứ Bình Xuyên</h1>
         </div>
+    </div>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <div class="row row-item-news">
+                <div class="col-md-3">
+                    <div class="img-box">
+                        <a href="@Url.Action("Detail", "Article", new { alias = item.Alias, id = item.Id })" title="@item.Title">
+                            <img src="@item.Image" alt="@item.Title" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="content-box">
+                        <h3>
+                            <a href="@Url.Action("Detail", "Article", new { alias = item.Alias, id = item.Id })" title="@item.Title">
+                                @item.Title
+                            </a>
+                        </h3>
+                        <div class="description-box">
+                            @item.Description
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
         <div class="row">
-            <div class="col-md-12">
-                @Model.Description
-            </div>
-            <div class="col-md-12">
-                @Html.Raw(Model.Detail)
-            </div>
+            <div class="col-6"></div>
+            <div class="col-6" style="text-align:right;">@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</div>
         </div>
     }
-
 </div>

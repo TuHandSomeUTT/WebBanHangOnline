@@ -349,6 +349,7 @@
     <Content Include="Content\assets\js\contact_custom.js" />
     <Content Include="Content\assets\js\custom.js" />
     <Content Include="Content\assets\js\jquery-3.2.1.min.js" />
+    <Content Include="Content\assets\js\product_interactions.js" />
     <Content Include="Content\assets\js\single_custom.js" />
     <Content Include="Content\assets\plugins\chart.js\Chart.bundle.js" />
     <Content Include="Content\assets\plugins\chart.js\Chart.bundle.min.js" />
@@ -3671,6 +3672,7 @@
     <Content Include="Views\Review\LichSuDonHang.cshtml" />
     <Content Include="Views\Customer\OrderHistory.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Article\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

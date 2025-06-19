@@ -58,5 +58,35 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
             return Json(new { Data = result }, JsonRequestBehavior.AllowGet);
         }
 
+        // Test method thống kê theo tháng
+        [HttpGet]
+        public ActionResult GetMonthlyStatistical()
+        {
+            var query = from o in db.Orders
+                        join od in db.OrderDetails on o.Id equals od.OrderId
+                        join p in db.Products on od.ProductId equals p.Id
+                        select new
+                        {
+                            CreatedDate = o.CreatedDate,
+                            Quantity = od.Quantity,
+                            Price = od.Price,
+                            OriginalPrice = p.OriginalPrice
+                        };
+
+            var result = query
+                .GroupBy(x => new { x.CreatedDate.Year, x.CreatedDate.Month })
+                .Select(x => new
+                {
+                    Thang = x.Key.Month,
+                    Nam = x.Key.Year,
+                    DoanhThu = x.Sum(y => y.Quantity * y.Price),
+                    GiaVon = x.Sum(y => y.Quantity * y.OriginalPrice),
+                    LoiNhuan = x.Sum(y => y.Quantity * y.Price) - x.Sum(y => y.Quantity * y.OriginalPrice)
+                })
+                .OrderBy(x => x.Nam).ThenBy(x => x.Thang);
+
+            return Json(new { Data = result }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

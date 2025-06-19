@@ -59,11 +59,23 @@
 @section scripts{
     <script src="~/Content/assets/js/categories_custom.js"></script>
     <script>
+        //function OnFailure(rs) {
+        //    if (!rs.Success) {
+        //        $('#show_success').html("Quý khách chưa mua hàng thành công, hãy thử thao tác lại. Gốm sứ Bình Xuyên chân thành cảm ơn quý khách 💕")
+        //    }
+        //}
         function OnFailure(rs) {
-            if (!rs.Success) {
-                $('#show_success').html("Quý khách chưa mua hàng thành công, hãy thử thao tác lại. Gốm sứ Bình Xuyên chân thành cảm ơn quý khách 💕")
+            let msg = "Quý khách chưa mua hàng thành công, hãy thử thao tác lại. Gốm sứ Bình Xuyên chân thành cảm ơn quý khách 💕";
+
+            if (rs.Code == -2 && rs.Message) {
+                msg = "❗ " + rs.Message;
+            } else if (rs.Code == -3) {
+                msg = "Đã xảy ra lỗi trong quá trình đặt hàng. Quý khách vui lòng thử lại sau.";
             }
+
+            $('#show_success').html(`<div class="alert alert-danger">${msg}</div>`);
         }
+
         $(document).ready(function () {
             $('body').on('change', '#drTypePayment', function () {//bắt sự kiện check bên partial_checkout, nếu người dùng chọn COD (id =1) thì ẩn còn lại nếu chọn CK (id = 2) thì show ra
                 var type = $(this).val();

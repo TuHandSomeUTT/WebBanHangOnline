@@ -53,7 +53,7 @@ namespace WebBanHangOnline.Controllers
             }
         }
         // Profile khách hàng
-        public async Task<ActionResult> Profile()
+        public async Task<ActionResult> profile()
         {
             var user = await UserManager.FindByNameAsync(User.Identity.Name);
             var item = new CreateAccountViewModel();
@@ -116,6 +116,8 @@ namespace WebBanHangOnline.Controllers
                     // 👉 SignOut cũ rồi SignIn lại với identity mới
                     AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
                     AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = model.RememberMe }, identity);
+// Mới sửa ở đây nè
+                    Session["Cart"] = null; // 👈 Thêm dòng này để clear giỏ khi login
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -445,6 +447,8 @@ namespace WebBanHangOnline.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+// Sửa ở đây nè            
+            Session["Cart"] = null; // 👈 Thêm dòng này để xoá giỏ khi logout
             return RedirectToAction("Index", "Home");
         }
 

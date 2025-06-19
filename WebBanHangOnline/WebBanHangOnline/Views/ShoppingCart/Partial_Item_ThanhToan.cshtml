@@ -1,36 +1,119 @@
-﻿﻿@model IEnumerable<WebBanHangOnline.Models.ShoppingCartItem>
+﻿@*﻿@model IEnumerable<WebBanHangOnline.Models.ShoppingCartItem>
+    @using WebBanHangOnline.Common
+
+    @if (Model != null && Model.Any())
+    {
+        <h3>GIỎ HÀNG <span style="float:right;position:relative"><small>@Model.Count()</small></span></h3>
+        //var i = 0;
+        var tongtien = decimal.Zero;
+        <div style="border:1px solid #808080;">
+            <table class="table">
+                <tr>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Số Lượng</th>
+                    <th>Giá</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    tongtien += item.TotalPrice;
+                    <tr class="text-center">
+                        <td>@item.ProductName</td>
+                        <td>@item.Quantity</td>
+                        <td>@Common.FormatNumber(item.Price, 0) VND</td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="2">Tổng tiền:</td>
+                    <td>@Common.FormatNumber(tongtien, 0) VND</td>
+                </tr>
+            </table>
+        </div>
+
+    }
+    else
+    {
+
+    }*@
+
+@model IEnumerable<WebBanHangOnline.Models.ShoppingCartItem>
 @using WebBanHangOnline.Common
+
+<style>
+    .cart-summary {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #fdfdfd;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        margin-top: 20px;
+    }
+
+    .cart-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+        color: #333;
+    }
+
+    .cart-count {
+        font-size: 14px;
+        float: right;
+        color: #888;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        vertical-align: middle !important;
+    }
+
+    .total-row td {
+        font-weight: bold;
+        background-color: #f8f9fa;
+        border-top: 2px solid #dee2e6;
+    }
+</style>
 
 @if (Model != null && Model.Any())
 {
-    <h3>GIỎ HÀNG <span style="float:right;position:relative"><small>@Model.Count()</small></span></h3>
-    //var i = 0;
     var tongtien = decimal.Zero;
-    <div style="border:1px solid #808080;">
-        <table class="table">
-            <tr>
-                <th>Tên Sản Phẩm</th>
-                <th>Số Lượng</th>
-                <th>Giá</th>
-            </tr>
-            @foreach (var item in Model)
-            {
-                tongtien += item.TotalPrice;
-                <tr class="text-center">
-                    <td>@item.ProductName</td>
-                    <td>@item.Quantity</td>
-                    <td>@Common.FormatNumber(item.Price, 0) VND</td>
+
+    <div class="cart-summary">
+        <div class="cart-title">
+            GIỎ HÀNG
+            <span class="cart-count">(@Model.Count() sản phẩm)</span>
+        </div>
+
+        <table class="table table-bordered cart-table text-center">
+            <thead class="thead-light">
+                <tr>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Số Lượng</th>
+                    <th>Giá</th>
                 </tr>
-            }
-            <tr>
-                <td colspan="2">Tổng tiền:</td>
-                <td>@Common.FormatNumber(tongtien, 0) VND</td>
-            </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    tongtien += item.TotalPrice;
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.Quantity</td>
+                        <td>@Common.FormatNumber(item.Price, 0) VND</td>
+                    </tr>
+                }
+                <tr class="total-row text-right">
+                    <td colspan="2" class="text-end">Tổng tiền:</td>
+                    <td class="text-center">@Common.FormatNumber(tongtien, 0) VND</td>
+                </tr>
+            </tbody>
         </table>
     </div>
-
 }
 else
 {
-
+    <div class="alert alert-warning mt-4" role="alert">
+        Không có sản phẩm nào trong giỏ hàng. Quý khách có thể <a href="/san-pham" class="alert-link">xem thêm sản phẩm tại đây</a> 🛒
+    </div>
 }
